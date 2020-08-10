@@ -158,3 +158,21 @@
     position: relative;
     top: 7rem;
 }
+
+/* Section: Contact Us */
+.contact-container{
+    background-color: #C1D6D9;
+}
+
+.contact-header{
+    font-family: "Exo", sans-serif;
+    font-size: 235%;
+    margin: 2rem;
+    color: white;
+}
+
+.btn-contact{
+    border: 2px solid white;
+    color: white;
+    font-family: "Exo", sans-serif;
+}
