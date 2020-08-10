@@ -55,6 +55,16 @@
     color: white;
 }
 
+.search-bar{
+    width: 100%;
+    border: 2px solid #C1D6D9;
+}
+
+input::placeholder {
+  color: #C1D6D9;
+  font-family: "Open Sans", sans-serif;
+}
+
 /* Section: Recommendations */
 .recommedation-header{
     font-family: "Exo", sans-serif;
