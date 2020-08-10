@@ -65,6 +65,11 @@ input::placeholder {
   font-family: "Open Sans", sans-serif;
 }
 
+#map{
+    height: 75vh;
+    margin: 2rem;
+}
+
 /* Section: Recommendations */
 .recommedation-header{
     font-family: "Exo", sans-serif;
