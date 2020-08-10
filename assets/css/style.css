@@ -176,3 +176,15 @@
     color: white;
     font-family: "Exo", sans-serif;
 }
+
+/* Section: Footer*/
+.footer-container{
+    background-color: #F2AB9B;
+    padding: 5px 0 5px 0;
+    font-family: "Exo", sans-serif;
+}
+
+footer{
+    font-size: 1.5rem;
+    color: white;
+}
