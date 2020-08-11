@@ -46,8 +46,40 @@
                     </form>
                 </div>
             </div>
-            <div id="map"></div>
-  
+            <div class="row">
+                <div id="map" class="col-12 col-md-8"></div>
+                <div id="listing" class="col-12 col-md-4">
+                    <table id="resultsTable">
+                        <tbody id="results"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div id="info-content">
+                <table>
+                    <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                    </tr>
+                    <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                    </tr>
+                    <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                    </tr>
+                    <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                    </tr>
+                    <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -154,7 +186,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXx5s8fkN7h6CO9T44KWV-aSV_9Lkf8-s&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXx5s8fkN7h6CO9T44KWV-aSV_9Lkf8-s&libraries=places&callback=initMap"
     defer></script>
     <script src="assets/js/script.js"></script>
 </body>
