@@ -66,13 +66,42 @@ input::placeholder {
 }
 
 #map{
-    height: 75vh;
-    margin: 2rem;
+    height: 42rem;
+
+}
+
+#listing{
+    padding: 0;
 }
 
 .attraction-icon{
     height: 24px;
     width: 24px;
+}
+
+#resultsTable {
+    border-collapse: collapse;
+    
+}
+
+#rating {
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.iw_table_row {
+    height: 18px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+    font-family: "Open Sans", sans-serif;
+}
+
+.iw_table_icon {
+    text-align: right;
 }
 
 /* Section: Recommendations */
@@ -210,21 +239,3 @@ footer{
 }
 
 
-      #resultsTable {
-        border-collapse: collapse;
-        width: 240px;
-      }
-      #rating {
-        font-size: 13px;
-        font-family: Arial Unicode MS;
-      }
-      .iw_table_row {
-        height: 18px;
-      }
-      .iw_attribute_name {
-        font-weight: bold;
-        text-align: right;
-      }
-      .iw_table_icon {
-        text-align: right;
-      }
