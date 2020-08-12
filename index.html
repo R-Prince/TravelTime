@@ -90,7 +90,7 @@
         </div>
         <div class="row">
             <div class="feature col-12 col-sm-4 text-center">
-                <div class="cancun">
+                <div class="cancun" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Cancun</h3>
                     <span class="feature-country">Mexico</span>
                 </div>
@@ -127,6 +127,51 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="close ml-auto close-btn" data-dismiss="modal"    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 id="exampleModalLabel" class="modal-title">Cancun</h5>
+                    <span class="modal-country">Mexico</span>
+                </div>
+            </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-12 col-lg-8 mb-2">
+                            <img class="modal-image img-fluid" src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Mexico boats in a river">
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h5 class="modal-guide-title">Quick Guide</h5>
+                            <ul class="quick-list">
+                                <li class="quick-items"><i class="quick-icon far fa-comments"></i> Spanish</li>
+                                <li class="quick-items"><i class="quick-icon fas fa-hand-holding-usd"></i> Peso</li>
+                                <li class="quick-items"><i class="quick-icon fas fa-temperature-low"></i> 30</li>
+                                <li class="quick-items"><i class="quick-icon fas fa-plane-departure"></i> Cancun International Airport</li>
+                                <li class="quick-items">When you close your eyes and dream of your Greek Island getaway do you imagine being perched on a cliff, looking out over the dazzling blue ocean, cool wine in hand, with blindingly white-washed houses behind you? Santorini is the one for you. Sure, you get this on the other islands that make up the Cyclades, but Santorini is the cream of the crop. When the ever-brilliant sunsets light up the cliffs and the buildings you may just think you’ve died and gone to heaven.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Section: Contact -->
     <section id="contact" class="container-fluid contact-container p-2">
         <div class="row">
@@ -184,8 +229,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXx5s8fkN7h6CO9T44KWV-aSV_9Lkf8-s&libraries=places&callback=initMap"
-    defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXx5s8fkN7h6CO9T44KWV-aSV_9Lkf8-s&libraries=places&callback=initMap"
+    defer></script>-->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
