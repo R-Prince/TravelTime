@@ -6,6 +6,7 @@
     <title>Travel Time</title> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1c9dd84298.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css">   
 </head>
 <body>
@@ -89,38 +90,38 @@
             </div>
         </div>
         <div class="row">
-            <div class="feature col-12 col-sm-4 text-center">
+            <div class="feature-cancun feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="cancun" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Cancun</h3>
                     <span class="feature-country">Mexico</span>
                 </div>
             </div>
-            <div class="feature col-12 col-sm-4 text-center">
-                <div class="london">
+            <div class="feature-london feature col-12 col-sm-4 text-center hvr-shrink">
+                <div class="london" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">London</h3>
                     <span class="feature-country">England</span>
                 </div>
             </div>
-            <div class="feature col-12 col-sm-4 text-center">
-                <div class="florida">
+            <div class="feature-florida feature col-12 col-sm-4 text-center hvr-shrink">
+                <div class="florida" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Florida</h3>
                     <span class="feature-country">United States of America</span>
                 </div>
             </div>
-            <div class="feature col-12 col-sm-4 text-center">
-                <div class="santorini">
+            <div class="feature-santorini feature col-12 col-sm-4 text-center hvr-shrink">
+                <div class="santorini" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Santorini</h3>
                     <span class="feature-country">Greece</span>
                 </div>
             </div>
-            <div class="feature col-12 col-sm-4 text-center">
-                <div class="kingston">
+            <div class="feature-kingston feature col-12 col-sm-4 text-center hvr-shrink">
+                <div class="kingston" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Kingston</h3>
                     <span class="feature-country">Jamaica</span>
                 </div>
             </div>
-            <div class="feature col-12 col-sm-4 text-center">
-                <div class="bali">
+            <div class="feature-bali feature col-12 col-sm-4 text-center hvr-shrink">
+                <div class="bali" data-toggle="modal" data-target="#modal-info">
                     <h3 class="feature-header">Bali</h3>
                     <span class="feature-country">Indoneisa</span>
                 </div>
@@ -128,11 +129,10 @@
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Section: Modal -->
+    <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="container">
+        <div class="modal-content container">
             <div class="row">
                 <div class="col-12">
                     <button type="button" class="close ml-auto close-btn" data-dismiss="modal"    aria-label="Close">
@@ -142,27 +142,24 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h5 id="exampleModalLabel" class="modal-title">Cancun</h5>
-                    <span class="modal-country">Mexico</span>
+                    <h5 id="modal-header"></h5>
+                    <span id="modal-country"></span>
                 </div>
             </div>
-            </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="row mt-4">
-                        <div class="col-12 col-lg-8 mb-2">
-                            <img class="modal-image img-fluid" src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Mexico boats in a river">
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <h5 class="modal-guide-title">Quick Guide</h5>
-                            <ul class="quick-list">
-                                <li class="quick-items"><i class="quick-icon far fa-comments"></i> Spanish</li>
-                                <li class="quick-items"><i class="quick-icon fas fa-hand-holding-usd"></i> Peso</li>
-                                <li class="quick-items"><i class="quick-icon fas fa-temperature-low"></i> 30</li>
-                                <li class="quick-items"><i class="quick-icon fas fa-plane-departure"></i> Cancun International Airport</li>
-                                <li class="quick-items">When you close your eyes and dream of your Greek Island getaway do you imagine being perched on a cliff, looking out over the dazzling blue ocean, cool wine in hand, with blindingly white-washed houses behind you? Santorini is the one for you. Sure, you get this on the other islands that make up the Cyclades, but Santorini is the cream of the crop. When the ever-brilliant sunsets light up the cliffs and the buildings you may just think you’ve died and gone to heaven.</li>
-                            </ul>
-                        </div>
+                <div class="row mt-4">
+                    <div class="col-12 col-lg-8 mb-2">
+                        <img id="modal-image" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h5 class="modal-guide-header">Quick Guide</h5>
+                        <ul class="quick-list">
+                            <li class="quick-item"><i class="quick-icon far fa-comments"></i><span id="language-item"></span></li>
+                            <li class="quick-item"><i class="quick-icon fas fa-hand-holding-usd"></i><span id="currency-item"></span></li>
+                            <li class="quick-item"><i class="quick-icon fas fa-temperature-low"></i><span id="temp-item"></span></li>
+                            <li class="quick-item"><i class="quick-icon fas fa-plane-departure"></i><span id="airport-item"></span></li>
+                            <li id="guide-item" class="quick-item"></li>
+                        </ul>
                     </div>
                 </div>
             </div>

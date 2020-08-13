@@ -210,7 +210,7 @@ input::placeholder {
 
 /* Section: Modal*/
 
-.modal-title{
+#modal-header{
     font-family: "Exo", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -222,17 +222,14 @@ input::placeholder {
     font-size: 3rem;
 }
 
-.modal-country{
+#modal-country{
     color: black;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
     font-size: 1rem;
 }
 
-.modal-image{
-}
-
-.modal-guide-title{
+.modal-guide-header{
     font-family: "Exo", sans-serif;
     font-size: 1.5rem;
     color: #F2AB9B;
@@ -248,11 +245,10 @@ input::placeholder {
     padding-right: 0.5rem;
 }
 
-.quick-items{
+.quick-item{
     margin-bottom: 1rem;
     font-family: "Open Sans", sans-serif;
 }
-
 
 /* Section: Contact Us */
 .contact-container{
