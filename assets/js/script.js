@@ -173,7 +173,7 @@ function showInfoWindow() {
     }
 };
 
-// Section: Modal 
+// Section: Modal Information
 
 // Modal: London
 $(".feature-london").click(function(){
