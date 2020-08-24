@@ -256,7 +256,7 @@ $(".feature-bali").click(function(){
 });
 
 
-// Google Maps Top Attractions results: Modal Recommedations
+// Google Maps API Top Attractions results: Modal Recommedations
 function modalAttractions(a,b){
     var map;
     var service;
@@ -278,40 +278,143 @@ function modalAttractions(a,b){
             query: 'tourist_attraction'
         };
 
+        var requestHotel = {
+            location: city,
+            radius: '500',
+            query: 'lodging'
+        }
+
         service = new google.maps.places.PlacesService(map);
         service.textSearch(request, callback);
+        service.textSearch(requestHotel, callbackHotel);
+        
     }
 
     function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            var place = results[i];
-            console.log(place);
-            marker = new google.maps.Marker({
-                map: map,
-                animation: google.maps.Animation.DROP,
-                position: place.geometry.location,
-                name: place.name,
-                address: place.formatted_address,
-                rating: place.rating
-            })
-            console.log(marker);
-            const infowindow = new google.maps.InfoWindow({
-                maxWidth: 300
-            });
-            marker.addListener('click', function() {
-            infowindow.setContent(
-                "<div><strong>" + 
-                this.name + "</strong><br>" + 
-                "<strong>Address: </strong>" + this.address + "<br>" + 
-                "<strong>Rating: </strong>" + this.rating +
-                "</div>"
-            )
-            infowindow.open(map, this);
-            });
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                var place = results[i];
+                marker = new google.maps.Marker({
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    position: place.geometry.location,
+                    name: place.name,
+                    address: place.formatted_address,
+                    rating: place.rating
+                })
+
+                const infowindow = new google.maps.InfoWindow({
+                    maxWidth: 300
+                });
+                marker.addListener('click', function() {
+                infowindow.setContent(
+                    "<div><strong>" + 
+                    this.name + "</strong><br>" + 
+                    "<strong>Address: </strong>" + this.address + "<br>" + 
+                    "<strong>Rating: </strong>" + this.rating +
+                    "</div>"
+                )
+                infowindow.open(map, this);
+                });
+            }
         }
-    }
+  
+    } 
+
+    function callbackHotel(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            var placeIdOne = results[0].place_id;
+            var placeIdTwo = results[1].place_id;
+            var placeIdThree = results[2].place_id;
+            var placeIdFour = results[3].place_id;
+            var placeIdFive = results[4].place_id;
+            var placeIdSix = results[5].place_id;
+        }
+
+        var requestOne = {
+            placeId: placeIdOne,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+        var requestTwo = {
+            placeId: placeIdTwo,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+        var requestThree = {
+            placeId: placeIdThree,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+            var requestFour = {
+            placeId: placeIdFour,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+            var requestFive = {
+            placeId: placeIdFive,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+            var requestSix = {
+            placeId: placeIdSix,
+            fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.getDetails(requestOne, callbackPlaceOne);
+        service.getDetails(requestTwo, callbackPlaceTwo);
+        service.getDetails(requestThree, callbackPlaceThree);
+        service.getDetails(requestFour, callbackPlaceFour);
+        service.getDetails(requestFive, callbackPlaceFive);
+        service.getDetails(requestSix, callbackPlaceSix);
+        
+        function callbackPlaceOne(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place.photos[0].getUrl({maxWidth: 600, maxHeight: 600})); 
+            }
+        }
+
+        function callbackPlaceTwo(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place); 
+            }
+        }
+
+        function callbackPlaceThree(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place); 
+            }
+        }
+
+        function callbackPlaceFour(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place); 
+            }
+        }
+    
+        function callbackPlaceFive(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place); 
+            }
+        }
+
+        function callbackPlaceSix(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results;
+                console.log(place); 
+            }
+        }
+        
   
     } 
     modalMap();
 }
+
+
+    
