@@ -185,6 +185,63 @@ $(".feature-london").click(function(){
   $('#airport-item').text("London Heathrow Airport");
   $('#guide-item').text("London is the capital and largest city of England and the United Kingdom, and is the largest urban area in Greater London. The River Thames travels through the city. London is the biggest city in western Europe, and the world's largest financial centre. ... London was founded by the Romans.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1550954992-8e4ae3f6897b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
+  londonMap();
+  
+  // Google Place API Search: London
+    var map;
+    var service;
+    var marker = [];
+
+    function londonMap() {
+        var london = new google.maps.LatLng(51.509865,-0.118092);
+
+        map = new google.maps.Map(document.getElementById('mapModal'), {
+            center: london,
+            zoom: 15
+        });
+
+        var request = {
+            location: london,
+            radius: '500',
+            query: 'lodging'
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, callback);
+    }
+
+    function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            console.log(place);
+            marker = new google.maps.Marker({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                position: place.geometry.location,
+                name: place.name,
+                address: place.formatted_address,
+                rating: place.rating
+            })
+            console.log(marker);
+            const infowindow = new google.maps.InfoWindow({
+                maxWidth: 300
+            });
+            marker.addListener('click', function() {
+            infowindow.setContent(
+                "<div><strong>" + 
+                this.name + "</strong><br>" + 
+                "<strong>Address: </strong>" + this.address + "<br>" + 
+                "<strong>Rating: </strong>" + this.rating +
+                "</div>"
+            )
+            infowindow.open(map, this);
+            });
+        }
+    }
+  
+    } 
+
 });
 
 // Modal: Cancun
