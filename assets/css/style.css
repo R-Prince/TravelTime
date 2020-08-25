@@ -263,6 +263,30 @@ input::placeholder {
     margin: 2rem;
 }
 
+.btn-book{
+    border: 2px solid #F2AB9B;
+    color: white;
+    font-family: "Exo", sans-serif;
+    background-color: #F2AB9B
+}
+
+.card-hr{
+    border: 1px solid #C1D6D9;
+}
+
+.card-list{
+    list-style: none;
+    padding: 0;
+}
+
+.card-item{
+    font-family: "Exo", sans-serif;
+}
+
+.card-img-top{
+    height: 250px;
+}
+
 /* Section: Contact Us */
 .contact-container{
     background-color: #C1D6D9;

@@ -372,42 +372,69 @@ function modalAttractions(a,b){
         function callbackPlaceOne(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place.photos[0].getUrl({maxWidth: 600, maxHeight: 600})); 
+                $('#hotelNameOne').text(place.name);
+                $('#hotelAddressOne').text(place.vicinity);
+                $('#hotelRatingOne').text(place.rating);
+                $('#hotelBookOne').attr("href", place.website);
+                $('#hotelImageOne').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                 
             }
         }
 
         function callbackPlaceTwo(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place); 
+                $('#hotelNameTwo').text(place.name);
+                $('#hotelAddressTwo').text(place.vicinity);
+                $('#hotelRatingTwo').text(place.rating);
+                $('#hotelBookTwo').attr("href", place.website);
+                $('#hotelImageTwo').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
             }
         }
 
         function callbackPlaceThree(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place); 
+                $('#hotelNameThree').text(place.name);
+                $('#hotelAddressThree').text(place.vicinity);
+                $('#hotelRatingThree').text(place.rating);
+                $('#hotelBookThree').attr("href", place.website);
+                $('#hotelImageThree').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
             }
         }
 
         function callbackPlaceFour(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place); 
+                $('#hotelNameFour').text(place.name);
+                $('#hotelAddressFour').text(place.vicinity);
+                $('#hotelRatingFour').text(place.rating);
+                $('#hotelBookFour').attr("href", place.website);
+                $('#hotelImageFour').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
             }
         }
     
         function callbackPlaceFive(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place); 
+                $('#hotelNameFive').text(place.name);
+                $('#hotelAddressFive').text(place.vicinity);
+                $('#hotelRatingFive').text(place.rating);
+                $('#hotelBookFive').attr("href", place.website);
+                $('#hotelImageFive').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+ 
             }
         }
 
         function callbackPlaceSix(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var place = results;
-                console.log(place); 
+                $('#hotelNameSix').text(place.name);
+                $('#hotelAddressSix').text(place.vicinity);
+                $('#hotelRatingSix').text(place.rating);
+                $('#hotelBookSix').attr("href", place.website);
+                $('#hotelImageSix').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+    
             }
         }
         
