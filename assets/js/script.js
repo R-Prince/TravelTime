@@ -374,10 +374,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameOne').text(place.name);
                 $('#hotelAddressOne').text(place.vicinity);
-                $('#hotelRatingOne').text(place.rating);
                 $('#hotelBookOne').attr("href", place.website);
                 $('#hotelImageOne').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
-                 
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingOne').html(ratingHtml);
+                    }
+                } 
             }
         }
 
@@ -386,9 +395,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameTwo').text(place.name);
                 $('#hotelAddressTwo').text(place.vicinity);
-                $('#hotelRatingTwo').text(place.rating);
                 $('#hotelBookTwo').attr("href", place.website);
                 $('#hotelImageTwo').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingTwo').html(ratingHtml);
+                    }
+                } 
             }
         }
 
@@ -397,9 +416,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameThree').text(place.name);
                 $('#hotelAddressThree').text(place.vicinity);
-                $('#hotelRatingThree').text(place.rating);
                 $('#hotelBookThree').attr("href", place.website);
                 $('#hotelImageThree').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingThree').html(ratingHtml);
+                    }
+                } 
             }
         }
 
@@ -408,9 +437,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameFour').text(place.name);
                 $('#hotelAddressFour').text(place.vicinity);
-                $('#hotelRatingFour').text(place.rating);
                 $('#hotelBookFour').attr("href", place.website);
                 $('#hotelImageFour').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingFour').html(ratingHtml);
+                    }
+                } 
             }
         }
     
@@ -419,9 +458,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameFive').text(place.name);
                 $('#hotelAddressFive').text(place.vicinity);
-                $('#hotelRatingFive').text(place.rating);
                 $('#hotelBookFive').attr("href", place.website);
                 $('#hotelImageFive').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingFive').html(ratingHtml);
+                    }
+                } 
  
             }
         }
@@ -431,9 +480,19 @@ function modalAttractions(a,b){
                 var place = results;
                 $('#hotelNameSix').text(place.name);
                 $('#hotelAddressSix').text(place.vicinity);
-                $('#hotelRatingSix').text(place.rating);
                 $('#hotelBookSix').attr("href", place.website);
                 $('#hotelImageSix').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                if (place.rating) {
+                    var ratingHtml = '';
+                    for (var i = 0; i < 5; i++) {
+                        if (place.rating < (i + 0.5)) {
+                            ratingHtml += '<i class="far fa-star"></i>'
+                        } else {
+                            ratingHtml += '<i class="fas fa-star"></i>'
+                        }
+                        $('#hotelRatingSix').html(ratingHtml);
+                    }
+                } 
     
             }
         }
