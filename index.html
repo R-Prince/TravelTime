@@ -46,40 +46,6 @@
                     </form>
                 </div>
             </div>
-            <div class="row ml-2 mr-2">
-                <div id="map" class="col-12 col-md-8 mb-2"></div>
-                <div id="listing" class="col-12 col-md-4 mb-2 pl-1">
-                    <table id="resultsTable">
-                        <tbody id="results"></tbody>
-                    </table>
-                </div>
-            </div>
-        <div class="d-none">
-            <div id="info-content">
-                <table>
-                    <tr id="iw-url-row" class="iw_table_row">
-                        <td id="iw-icon" class="iw_table_icon"></td>
-                        <td id="iw-url"></td>
-                    </tr>
-                    <tr id="iw-address-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Address:</td>
-                        <td id="iw-address"></td>
-                    </tr>
-                    <tr id="iw-phone-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Telephone:</td>
-                        <td id="iw-phone"></td>
-                    </tr>
-                    <tr id="iw-rating-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Rating:</td>
-                        <td id="iw-rating"></td>
-                    </tr>
-                    <tr id="iw-website-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Website:</td>
-                        <td id="iw-website"></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
     </section>
 
     <!-- Section: Recommendations -->
@@ -128,6 +94,127 @@
             </div>
         </div>
     </section>
+
+    <!-- Section: Autocomplete Modal -->
+    <div class="modal fade" id="modal-auto-info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content container">
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="close ml-auto close-btn" data-dismiss="modal"    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 id="modal-auto-header"></h5>
+                    <span id="modal-auto-country"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <h5 class=" text-center attraction-header">Top Attractions</h5>
+                </div>
+                <div class="col-12">
+                    <div id="mapAuto"></div>
+                </div>
+                <div class="col-12">
+                    <h5 class=" text-center attraction-header">Top Hotels</h5>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageOne" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameOne"></li>
+                                    <li  class="card-item" id="autoHotelAddressOne"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingOne"></li>
+                                </ul>
+                                <a id="autoHotelBookOne" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageTwo" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameTwo"></li>
+                                    <li  class="card-item" id="autoHotelAddressTwo"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingTwo"></li>
+                                </ul>
+                                <a id="autoHotelBookTwo" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageThree" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameThree"></li>
+                                    <li  class="card-item" id="autoHotelAddressThree"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingThree"></li>
+                                </ul>
+                                <a id="autoHotelBookThree" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageFour" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameFour"></li>
+                                    <li  class="card-item" id="autoHotelAddressFour"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingFour"></li>
+                                </ul>
+                                <a id="autoHotelBookFour" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageFive" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameFive"></li>
+                                    <li  class="card-item" id="autoHotelAddressFive"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingFive"></li>
+                                </ul>
+                                <a id="autoHotelBookFive" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="card">
+                            <img id="autoHotelImageSix" src="..." class="card-img-top" alt="Image of the hotel">
+                            <div class="card-body text-center">
+                                <ul class="card-list">
+                                    <li class="card-item font-weight-bolder" id="autoHotelNameSix"></li>
+                                    <li  class="card-item" id="autoHotelAddressSix"></li>
+                                    <hr class="card-hr">
+                                    <li class="card-item" id="autoHotelRatingSix"></li>
+                                </ul>
+                                <a id="autoHotelBookSix" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <!-- Section: Modal -->
     <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -321,7 +408,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdBqz5aZKn5u3_GeKoUVzRZS6bsw33p_o&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdBqz5aZKn5u3_GeKoUVzRZS6bsw33p_o&libraries=places"
     defer></script>
     <script src="assets/js/script.js"></script>
 </body>

@@ -65,8 +65,8 @@ input::placeholder {
   font-family: "Open Sans", sans-serif;
 }
 
-#map{
-    height: 42rem;
+#mapAuto{
+    height: 80vh;
 
 }
 

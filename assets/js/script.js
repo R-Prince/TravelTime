@@ -1,177 +1,272 @@
-//Google Place API 
-var map, places, infoWindow;
-var markers = [];
-var autocomplete;
-var countryRestrict = {'country': 'us'};
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
-var hostnameRegexp = new RegExp('^https?://.+?/');
 
-function initMap() {
-    const worldCenter = {lat: 15, lng: 0};
-    map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 2,
-    center: worldCenter,
-    mapTypeControl: false,
-    panControl: false,
-    zoomControl: false,
-    streetViewControl: false
-    });
+document.getElementById("autocomplete").addEventListener("click", startAuto);
 
-    infoWindow = new google.maps.InfoWindow({
-        content: document.getElementById('info-content')
-    });
+function startAuto(){
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('autocomplete')), {
         types: ['(cities)']}
     );
-    places = new google.maps.places.PlacesService(map);
-    autocomplete.addListener('place_changed', onPlaceChanged);
-}
-    
-function onPlaceChanged() {
-    var place = autocomplete.getPlace();
-    if (place.geometry) {
-        map.panTo(place.geometry.location);
-        map.setZoom(15);
-        search();
-    } else {
-        document.getElementById('autocomplete').placeholder = 'Enter a city';
-    }
-};
 
-// Search for attractions in the selected city, within the viewport of the map.
-function search() {
-    var search = {
-        bounds: map.getBounds(),
-        types: ['tourist_attraction']
-    };
-    places.nearbySearch(search, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-        clearResults();
-        clearMarkers();
-        // Create a marker for each attraction found, and
-        // assign a letter of the alphabetic to each marker icon.
-        for (var i = 0; i < results.length; i++) {
-        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-        var markerIcon = MARKER_PATH + markerLetter + '.png';
-        // Use marker animation to drop the icons incrementally on the map.
-        markers[i] = new google.maps.Marker({
-        position: results[i].geometry.location,
-        animation: google.maps.Animation.DROP,
-        icon: markerIcon
-    });
-    // If the user clicks a marker, show the details of that attraction
-    // in an info window.
-    markers[i].placeResult = results[i];
-    google.maps.event.addListener(markers[i], 'click', showInfoWindow);
-    setTimeout(dropMarker(i), i * 100);
-    addResult(results[i], i);
-    }
-    }
-    });
-};
-
-function clearMarkers() {
-    for (var i = 0; i < markers.length; i++) {
-        if (markers[i]) {
-        markers[i].setMap(null);}
-    }
-    markers = [];
-};
-
-function dropMarker(i) {
-    return function() {
-    markers[i].setMap(map);
-    };
-};
-
-function addResult(result, i) {
-    var results = document.getElementById('results');
-    var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-    var markerIcon = MARKER_PATH + markerLetter + '.png';
-
-    var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-    tr.onclick = function() {
-    google.maps.event.trigger(markers[i], 'click');
-    };
-
-    var iconTd = document.createElement('td');
-    var nameTd = document.createElement('td');
-    var icon = document.createElement('img');
-    icon.src = markerIcon;
-    icon.setAttribute('class', 'placeIcon');
-    icon.setAttribute('className', 'placeIcon');
-    var name = document.createTextNode(result.name);
-    iconTd.appendChild(icon);
-    nameTd.appendChild(name);
-    tr.appendChild(iconTd);
-    tr.appendChild(nameTd);
-    results.appendChild(tr);
-};
-
-function clearResults() {
-    var results = document.getElementById('results');
-    while (results.childNodes[0]) {
-        results.removeChild(results.childNodes[0]);
-    }
-};
-
-// Get the place details for an attraction. Show the information in an info window,
-// anchored on the marker for the attraction that the user selected.
-function showInfoWindow() {
-    var marker = this;
-    places.getDetails({placeId: marker.placeResult.place_id},
-    function(place, status) {
-        if (status !== google.maps.places.PlacesServiceStatus.OK) {
-            return;
-        }
-        infoWindow.open(map, marker);
-        buildIWContent(place);
-        });
-    };
-
-    // Load the place information into the HTML elements used by the info window.
-    function buildIWContent(place) {
-        document.getElementById('iw-icon').innerHTML = '<img class="attraction-icon"' + 'src="' + place.icon + '"/>';
-        document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url + '">' + place.name + '</a></b>';
-        document.getElementById('iw-address').textContent = place.vicinity;
-
-        if (place.formatted_phone_number) {
-            document.getElementById('iw-phone-row').style.display = '';
-            document.getElementById('iw-phone').textContent = place.formatted_phone_number;
-        } else {
-          document.getElementById('iw-phone-row').style.display = 'none';
-        }
-    
-        if (place.rating) {
-          var ratingHtml = '';
-          for (var i = 0; i < 5; i++) {
-            if (place.rating < (i + 0.5)) {
-              ratingHtml += '&#10025;';
-            } else {
-              ratingHtml += '&#10029;';
-            }
-            document.getElementById('iw-rating-row').style.display = '';
-            document.getElementById('iw-rating').innerHTML = ratingHtml;
-            }
-        } else {
-          document.getElementById('iw-rating-row').style.display = 'none';
-        }
-        if (place.website) {
-          var fullUrl = place.website;
-          var website = hostnameRegexp.exec(place.website);
-          if (website === null) {
-            website = 'http://' + place.website + '/';
-            fullUrl = website;
+    autocomplete.addListener('place_changed', placeSearch)
         
-          document.getElementById('iw-website-row').style.display = '';
-          document.getElementById('iw-website').textContent = website;
-        } else {
-          document.getElementById('iw-website-row').style.display = 'none';
-        }    
+}
+
+function placeSearch(){
+    var place = autocomplete.getPlace();
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng()
+
+    modalAttractions(lat,lng);
+
+    $('#modal-auto-info').modal('show')
+
+
+    function modalAttractions(a,b){
+        var map;
+        var service;
+        var marker = [];
+
+        function autoMap() {
+            var lat = a;
+            var lng = b;
+            var city = new google.maps.LatLng(lat,lng);
+
+            map = new google.maps.Map(document.getElementById('mapAuto'), {
+                center: city,
+                zoom: 15
+            });
+
+            var request = {
+                location: city,
+                radius: '500',
+                query: 'tourist_attraction'
+            };
+
+            var requestHotel = {
+                location: city,
+                radius: '500',
+                query: 'lodging'
+            }
+
+            service = new google.maps.places.PlacesService(map);
+            service.textSearch(request, callback);
+            service.textSearch(requestHotel, callbackHotel);
+            
+        }
+
+        function callback(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    var place = results[i];
+                    marker = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: place.geometry.location,
+                        name: place.name,
+                        address: place.formatted_address,
+                        rating: place.rating
+                    })
+
+                    const infowindow = new google.maps.InfoWindow({
+                        maxWidth: 300
+                    });
+                    marker.addListener('click', function() {
+                    infowindow.setContent(
+                        "<div><strong>" + 
+                        this.name + "</strong><br>" + 
+                        "<strong>Address: </strong>" + this.address + "<br>" + 
+                        "<strong>Rating: </strong>" + this.rating +
+                        "</div>"
+                    )
+                    infowindow.open(map, this);
+                    });
+                }
+            }
+    
+        } 
+
+        function callbackHotel(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var placeIdOne = results[0].place_id;
+                var placeIdTwo = results[1].place_id;
+                var placeIdThree = results[2].place_id;
+                var placeIdFour = results[3].place_id;
+                var placeIdFive = results[4].place_id;
+                var placeIdSix = results[5].place_id;
+            }
+
+            var requestOne = {
+                placeId: placeIdOne,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+            var requestTwo = {
+                placeId: placeIdTwo,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+            var requestThree = {
+                placeId: placeIdThree,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+                var requestFour = {
+                placeId: placeIdFour,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+                var requestFive = {
+                placeId: placeIdFive,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+                var requestSix = {
+                placeId: placeIdSix,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            };
+
+            service = new google.maps.places.PlacesService(map);
+            service.getDetails(requestOne, callbackPlaceOne);
+            service.getDetails(requestTwo, callbackPlaceTwo);
+            service.getDetails(requestThree, callbackPlaceThree);
+            service.getDetails(requestFour, callbackPlaceFour);
+            service.getDetails(requestFive, callbackPlaceFive);
+            service.getDetails(requestSix, callbackPlaceSix);
+            
+            function callbackPlaceOne(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameOne').text(place.name);
+                    $('#autoHotelAddressOne').text(place.vicinity);
+                    $('#autoHotelBookOne').attr("href", place.website);
+                    $('#autoHotelImageOne').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingOne').html(ratingHtml);
+                        }
+                    } 
+                }
+            }
+
+            function callbackPlaceTwo(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameTwo').text(place.name);
+                    $('#autoHotelAddressTwo').text(place.vicinity);
+                    $('#autoHotelBookTwo').attr("href", place.website);
+                    $('#autoHotelImageTwo').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingTwo').html(ratingHtml);
+                        }
+                    } 
+                }
+            }
+
+            function callbackPlaceThree(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameThree').text(place.name);
+                    $('#autoHotelAddressThree').text(place.vicinity);
+                    $('#autoHotelBookThree').attr("href", place.website);
+                    $('#autoHotelImageThree').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingThree').html(ratingHtml);
+                        }
+                    } 
+                }
+            }
+
+            function callbackPlaceFour(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameFour').text(place.name);
+                    $('#autoHotelAddressFour').text(place.vicinity);
+                    $('#autoHotelBookFour').attr("href", place.website);
+                    $('#autoHotelImageFour').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingFour').html(ratingHtml);
+                        }
+                    } 
+                }
+            }
+        
+            function callbackPlaceFive(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameFive').text(place.name);
+                    $('#autoHotelAddressFive').text(place.vicinity);
+                    $('#autoHotelBookFive').attr("href", place.website);
+                    $('#autoHotelImageFive').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingFive').html(ratingHtml);
+                        }
+                    } 
+    
+                }
+            }
+
+            function callbackPlaceSix(results, status){
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var place = results;
+                    $('#autoHotelNameSix').text(place.name);
+                    $('#autoHotelAddressSix').text(place.vicinity);
+                    $('#autoHotelBookSix').attr("href", place.website);
+                    $('#autoHotelImageSix').attr("src", place.photos[0].getUrl({maxWidth: 300, maxHeight: 300}));
+                    if (place.rating) {
+                        var ratingHtml = '';
+                        for (var i = 0; i < 5; i++) {
+                            if (place.rating < (i + 0.5)) {
+                                ratingHtml += '<i class="far fa-star"></i>'
+                            } else {
+                                ratingHtml += '<i class="fas fa-star"></i>'
+                            }
+                            $('#autoHotelRatingSix').html(ratingHtml);
+                        }
+                    } 
+        
+                }
+            }
+            
+    
+        } 
+        autoMap();
     }
-};
+        
+}
 
 // Section: Modal Information
 
