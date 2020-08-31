@@ -89,21 +89,6 @@ input::placeholder {
     font-family: "Open Sans", sans-serif;
 }
 
-.iw_table_row {
-    height: 18px;
-    font-family: "Open Sans", sans-serif;
-}
-
-.iw_attribute_name {
-    font-weight: bold;
-    text-align: right;
-    font-family: "Open Sans", sans-serif;
-}
-
-.iw_table_icon {
-    text-align: right;
-}
-
 /* Section: Recommendations */
 .recommedation-header{
     font-family: "Exo", sans-serif;
@@ -229,9 +214,18 @@ input::placeholder {
     font-size: 1rem;
 }
 
+.auto-modal-country{
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
 .modal-guide-header{
     font-family: "Exo", sans-serif;
-    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.5rem;
     color: #F2AB9B;
 }
 
@@ -285,6 +279,11 @@ input::placeholder {
 
 .card-img-top{
     height: 250px;
+}
+
+.auto-image-results{
+    height: 250px;
+    width: 250px;
 }
 
 /* Section: Contact Us */

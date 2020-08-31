@@ -16,9 +16,13 @@ function placeSearch(){
     var lat = place.geometry.location.lat();
     var lng = place.geometry.location.lng()
 
+    console.log(place);
+
     modalAttractions(lat,lng);
 
     $('#modal-auto-info').modal('show')
+    $('#modal-auto-header').text(place.name);
+    $('#modal-auto-country').text(place.formatted_address);
 
 
     function modalAttractions(a,b){
@@ -39,7 +43,7 @@ function placeSearch(){
             var request = {
                 location: city,
                 radius: '500',
-                query: 'tourist_attraction'
+                query: ['restaurant', 'tourist_attraction']
             };
 
             var requestHotel = {
@@ -370,7 +374,7 @@ function modalAttractions(a,b){
         var request = {
             location: city,
             radius: '500',
-            query: 'tourist_attraction'
+            query: ['restaurant', 'tourist_attraction']
         };
 
         var requestHotel = {

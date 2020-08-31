@@ -12,7 +12,9 @@
 <body>
     <!--Section: Callout -->  
     <section class="container-fluid callout-container">
+        
         <!-- Navbar-->
+
         <nav class="navbar">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i></button>       
@@ -25,14 +27,17 @@
             </div>
             <button class="btn btn-recommedations btn-large d-none d-sm-block ml-auto">Recommedations</button>
         </nav>
+
         <!-- Callout: text-->
+
         <div class="text-center callout-section">
             <h1 class="callout-header">Travel Time</h1>
             <p class="callout-text">Search for your next holiday destination or browse our hand-picked selection.</p>
         </div>
     </section>
 
-    <!--Section: Search -->  
+    <!--Section: Search --> 
+
     <section id="search" class="container-fluid search-container text-center">
             <div class="row">
                 <div class="col-12">
@@ -49,6 +54,7 @@
     </section>
 
     <!-- Section: Recommendations -->
+
     <section id="recommedations" class="container pb-5">
         <div class="row">
             <div class="col-12 text-center">
@@ -96,6 +102,7 @@
     </section>
 
     <!-- Section: Autocomplete Modal -->
+    
     <div class="modal fade" id="modal-auto-info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content container">
@@ -108,14 +115,11 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h5 id="modal-auto-header"></h5>
-                    <span id="modal-auto-country"></span>
+                    <h5 id="modal-auto-header" class="modal-guide-header"></h5>
+                    <span id="modal-auto-country" class="auto-modal-country"></span>
                 </div>
             </div>
             <div class="modal-body">
-                <div class="col-12">
-                    <h5 class=" text-center attraction-header">Top Attractions</h5>
-                </div>
                 <div class="col-12">
                     <div id="mapAuto"></div>
                 </div>
