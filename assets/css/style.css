@@ -1,7 +1,61 @@
 /* Website Font */
+
 @import url('https://fonts.googleapis.com/css2?family=Exo&family=Open+Sans&display=swap');
 
+/* Headers */
+
+.orange-header{
+    font-family: "Exo", sans-serif;
+    font-size: 2.5rem;
+    margin: 3rem;
+    color: #F2AB9B;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.white-header{
+    font-family: "Exo", sans-serif;
+    font-size: 2.5rem;
+    margin: 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.callout-header{
+    font-family: "Exo", sans-serif;
+    font-size: 300%;
+}
+
+.search-header{
+    font-family: "Exo", sans-serif;
+    font-size: 235%;
+    margin: 2rem;
+    color: white;
+}
+
+.orange-modal-header{
+    font-family: "Exo", sans-serif;
+    font-size: 3rem;
+    margin: 0.5rem;
+    color: #F2AB9B;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.grey-modal-header{
+    font-family: "Exo", sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #C1D6D9;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+
+
 /* Section: Callout */
+
 .callout-container{
     height: 95vh;
     background: url(https://images.unsplash.com/photo-1462400362591-9ca55235346a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1434&q=80) no-repeat;
@@ -15,17 +69,13 @@
     color: white;
 }
 
-.callout-header{
-    font-family: "Exo", sans-serif;
-    font-size: 300%;
-}
-
 .callout-text{
     font-family: "Open Sans",sans-serif;
     font-size: 125%;
 }
 
 /* Navbar */
+
 .nav-link{
     color: white;
 }
@@ -42,17 +92,11 @@
 }
 
 /* Section: Search */
+
 .search-container{
     background-color: #C1D6D9;
     height: max-content;
     padding-bottom: 3rem;
-}
-
-.search-header{
-    font-family: "Exo", sans-serif;
-    font-size: 235%;
-    margin: 2rem;
-    color: white;
 }
 
 .search-bar{
@@ -70,31 +114,29 @@ input::placeholder {
 
 }
 
-#listing{
-    padding: 0;
-}
-
-.attraction-icon{
-    height: 24px;
-    width: 24px;
-}
-
-#resultsTable {
-    border-collapse: collapse;
-    
-}
-
 #rating {
     font-size: 13px;
     font-family: "Open Sans", sans-serif;
 }
 
 /* Section: Recommendations */
-.recommedation-header{
+
+.recommendation-city{
+    color: white;
     font-family: "Exo", sans-serif;
-    font-size: 235%;
-    margin: 2rem;
-    color: #F2AB9B;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    top: 7rem;
+    font-size: 200%;
+}
+
+.recommendation-country{
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    top: 7rem;
 }
 
 .cancun{
@@ -175,33 +217,7 @@ input::placeholder {
     margin: 0.4rem;
 }
 
-.feature-header{
-    color: white;
-    font-family: "Exo", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    top: 7rem;
-    font-size: 200%;
-}
-
-.feature-country{
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    position: relative;
-    top: 7rem;
-}
-
 /* Section: Modal*/
-
-#modal-header{
-    font-family: "Exo", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 3.5rem;
-    color: #F2AB9B;
-}
 
 .close-btn{
     font-size: 3rem;
@@ -214,7 +230,7 @@ input::placeholder {
     font-size: 1rem;
 }
 
-.auto-modal-country{
+.modal-auto-country{
     color: black;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
@@ -225,7 +241,7 @@ input::placeholder {
     font-family: "Exo", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     color: #F2AB9B;
 }
 
@@ -246,15 +262,6 @@ input::placeholder {
 
 #mapModal{
     height: 80vh;
-}
-
-.attraction-header{
-    font-family: "Exo", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 3rem;
-    color: #F2AB9B;
-    margin: 2rem;
 }
 
 .btn-book{
@@ -289,13 +296,6 @@ input::placeholder {
 /* Section: Contact Us */
 .contact-container{
     background-color: #C1D6D9;
-}
-
-.contact-header{
-    font-family: "Exo", sans-serif;
-    font-size: 235%;
-    margin: 2rem;
-    color: white;
 }
 
 .btn-contact{

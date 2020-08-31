@@ -25,7 +25,7 @@
                     <li class="nav-item mr-2"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
-            <button class="btn btn-recommedations btn-large d-none d-sm-block ml-auto">Recommedations</button>
+            <button class="btn btn-recommedations btn-large d-none d-sm-block ml-auto" href="#recommedations">Recommedations</button>
         </nav>
 
         <!-- Callout: text-->
@@ -58,44 +58,44 @@
     <section id="recommedations" class="container pb-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="recommedation-header">Top Picks</h2>
+                <h2 class="orange-header">Travel Time Picks</h2>
             </div>
         </div>
         <div class="row">
             <div class="feature-cancun feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="cancun" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">Cancun</h3>
-                    <span class="feature-country">Mexico</span>
+                    <h3 class="recommendation-city">Cancun</h3>
+                    <span class="recommendation-country">Mexico</span>
                 </div>
             </div>
             <div class="feature-london feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="london" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">London</h3>
-                    <span class="feature-country">England</span>
+                    <h3 class="recommendation-city">London</h3>
+                    <span class="recommendation-country">England</span>
                 </div>
             </div>
             <div class="feature-florida feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="florida" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">Florida</h3>
-                    <span class="feature-country">United States of America</span>
+                    <h3 class="recommendation-city">Florida</h3>
+                    <span class="recommendation-country">United States of America</span>
                 </div>
             </div>
             <div class="feature-santorini feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="santorini" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">Santorini</h3>
-                    <span class="feature-country">Greece</span>
+                    <h3 class="recommendation-city">Santorini</h3>
+                    <span class="recommendation-country">Greece</span>
                 </div>
             </div>
             <div class="feature-kingston feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="kingston" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">Kingston</h3>
-                    <span class="feature-country">Jamaica</span>
+                    <h3 class="recommendation-city">Kingston</h3>
+                    <span class="recommendation-country">Jamaica</span>
                 </div>
             </div>
             <div class="feature-bali feature col-12 col-sm-4 text-center hvr-shrink">
                 <div class="bali" data-toggle="modal" data-target="#modal-info">
-                    <h3 class="feature-header">Bali</h3>
-                    <span class="feature-country">Indoneisa</span>
+                    <h3 class="recommendation-city">Bali</h3>
+                    <span class="recommendation-country">Indoneisa</span>
                 </div>
             </div>
         </div>
@@ -115,19 +115,22 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h5 id="modal-auto-header" class="modal-guide-header"></h5>
-                    <span id="modal-auto-country" class="auto-modal-country"></span>
+                    <h2 id="modal-auto-header" class="orange-modal-header"></h2>
+                    <span id="modal-auto-country" class="modal-auto-country"></span>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="col-12">
+                    <h5 class="grey-modal-header">Points of Interest</h5>
+                </div>
+                <div class="col-12">
                     <div id="mapAuto"></div>
                 </div>
                 <div class="col-12">
-                    <h5 class=" text-center attraction-header">Top Hotels</h5>
+                    <h2 class=" text-center orange-header">Hotels</h2>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageOne" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -141,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageTwo" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -155,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageThree" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -169,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageFour" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -183,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageFive" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -197,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="autoHotelImageSix" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -233,7 +236,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h5 id="modal-header"></h5>
+                    <h2 id="modal-header" class="orange-modal-header"></h2>
                     <span id="modal-country"></span>
                 </div>
             </div>
@@ -254,16 +257,16 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <h5 class=" text-center attraction-header">Top Attractions</h5>
+                    <h5 class=" text-center orange-header">Points of Interest</h5>
                 </div>
                 <div class="col-12">
                     <div id="mapModal"></div>
                 </div>
                 <div class="col-12">
-                    <h5 class=" text-center attraction-header">Top Hotels</h5>
+                    <h5 class=" text-center orange-header">Hotels</h5>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageOne" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -277,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageTwo" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -291,7 +294,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageThree" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -305,7 +308,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageFour" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -319,7 +322,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageFive" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -333,7 +336,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 mb-3">
+                    <div class="col-12 col-lg-4 mb-3">
                         <div class="card">
                             <img id="hotelImageSix" src="..." class="card-img-top" alt="Image of the hotel">
                             <div class="card-body text-center">
@@ -359,7 +362,7 @@
     <section id="contact" class="container-fluid contact-container p-2">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="contact-header">Contact Us</h2>
+                <h2 class="white-header">Contact Us</h2>
             </div>
         </div>
         <form class="container">
