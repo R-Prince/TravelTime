@@ -52,6 +52,31 @@
     letter-spacing: 0.2rem;
 }
 
+/* Buttons */
+
+.btn-transparent{
+    border: 2px solid white;
+    color: white;
+    font-family: "Exo", sans-serif;
+}
+
+.btn-close-modal{
+    font-size: 3rem;
+}
+
+.btn-orange{
+    border: 2px solid #F2AB9B;
+    color: white;
+    font-family: "Exo", sans-serif;
+    background-color: #F2AB9B
+}
+
+.btn-grey{
+    border: 2px solid #C1D6D9;
+    color: white;
+    font-family: "Exo", sans-serif;
+    background-color: #C1D6D9;
+}
 
 
 /* Section: Callout */
@@ -83,12 +108,6 @@
 .fa-bars{
     color: white;
     font-size: 1.5rem;
-}
-
-.btn-recommedations{
-    border: 2px solid white;
-    color: white;
-    font-family: "Exo", sans-serif;
 }
 
 /* Section: Search */
@@ -219,10 +238,6 @@ input::placeholder {
 
 /* Section: Modal*/
 
-.close-btn{
-    font-size: 3rem;
-}
-
 #modal-country{
     color: black;
     font-family: "Open Sans", sans-serif;
@@ -264,13 +279,6 @@ input::placeholder {
     height: 80vh;
 }
 
-.btn-book{
-    border: 2px solid #F2AB9B;
-    color: white;
-    font-family: "Exo", sans-serif;
-    background-color: #F2AB9B
-}
-
 .card-hr{
     border: 1px solid #C1D6D9;
 }
@@ -296,12 +304,6 @@ input::placeholder {
 /* Section: Contact Us */
 .contact-container{
     background-color: #C1D6D9;
-}
-
-.btn-contact{
-    border: 2px solid white;
-    color: white;
-    font-family: "Exo", sans-serif;
 }
 
 /* Section: Footer*/

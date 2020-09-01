@@ -21,11 +21,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-2"><a href="#search" class="nav-link">Search</a></li>
-                    <li class="nav-item mr-2"><a href="#recommedations" class="nav-link">Recommedations</a></li>
+                    <li class="nav-item mr-2"><a href="#recommendations" class="nav-link">Recommendations</a></li>
                     <li class="nav-item mr-2"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
-            <button class="btn btn-recommedations btn-large d-none d-sm-block ml-auto" href="#recommedations">Recommedations</button>
+            <button onclick="document.location='#recommendations'" class="btn btn-transparent btn-large d-none d-sm-block ml-auto">Recommendations</button>
         </nav>
 
         <!-- Callout: text-->
@@ -55,7 +55,7 @@
 
     <!-- Section: Recommendations -->
 
-    <section id="recommedations" class="container pb-5">
+    <section id="recommendations" class="container pb-5">
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="orange-header">Travel Time Picks</h2>
@@ -108,7 +108,7 @@
         <div class="modal-content container">
             <div class="row">
                 <div class="col-12">
-                    <button type="button" class="close ml-auto close-btn" data-dismiss="modal"    aria-label="Close">
+                    <button type="button" class="close ml-auto btn-close-modal" data-dismiss="modal"    aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -140,7 +140,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingOne"></li>
                                 </ul>
-                                <a id="autoHotelBookOne" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookOne" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingTwo"></li>
                                 </ul>
-                                <a id="autoHotelBookTwo" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookTwo" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingThree"></li>
                                 </ul>
-                                <a id="autoHotelBookThree" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookThree" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingFour"></li>
                                 </ul>
-                                <a id="autoHotelBookFour" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookFour" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingFive"></li>
                                 </ul>
-                                <a id="autoHotelBookFive" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookFive" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -210,14 +210,14 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="autoHotelRatingSix"></li>
                                 </ul>
-                                <a id="autoHotelBookSix" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="autoHotelBookSix" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-grey" data-dismiss="modal">Close</button>   
             </div>
         </div>
     </div>
@@ -229,7 +229,7 @@
         <div class="modal-content container">
             <div class="row">
                 <div class="col-12">
-                    <button type="button" class="close ml-auto close-btn" data-dismiss="modal"    aria-label="Close">
+                    <button type="button" class="close ml-auto btn-close-modal" data-dismiss="modal"    aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <h5 class=" text-center orange-header">Points of Interest</h5>
+                    <h5 class="grey-modal-header">Points of Interest</h5>
                 </div>
                 <div class="col-12">
                     <div id="mapModal"></div>
@@ -276,7 +276,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingOne"></li>
                                 </ul>
-                                <a id="hotelBookOne" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookOne" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingTwo"></li>
                                 </ul>
-                                <a id="hotelBookTwo" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookTwo" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingThree"></li>
                                 </ul>
-                                <a id="hotelBookThree" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookThree" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -318,7 +318,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingFour"></li>
                                 </ul>
-                                <a id="hotelBookFour" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookFour" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -332,7 +332,7 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingFive"></li>
                                 </ul>
-                                <a id="hotelBookFive" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookFive" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -346,14 +346,14 @@
                                     <hr class="card-hr">
                                     <li class="card-item" id="hotelRatingSix"></li>
                                 </ul>
-                                <a id="hotelBookSix" href="" target="_blank"><button class="btn btn-book">Book Now</button></a>
+                                <a id="hotelBookSix" href="" target="_blank"><button class="btn btn-orange">Book Now</button></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-grey" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -389,7 +389,7 @@
                         <textarea class="form-control" id="text-area" rows="10" placeholder="Please type your enquiry here..."></textarea>
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-contact btn-lg mt-1 mb-2">Send</button>
+                        <button type="submit" class="btn btn-transparent btn-lg mt-1 mb-2">Send</button>
                     </div>
                 </div>
             </div>
