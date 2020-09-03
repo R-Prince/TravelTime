@@ -601,5 +601,23 @@ function modalAttractions(a,b){
     modalMap();
 }
 
+/* Image Slider for Landing Page */
 
+$(function () {
+    var image = $('.callout-container')
+
+    var backgrounds = [
+      'url(https://images.unsplash.com/photo-1462400362591-9ca55235346a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1434&q=80) no-repeat fixed center', 
+      'url(https://images.unsplash.com/photo-1489914099268-1dad649f76bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat fixed center'];
+    var current = 0;
+
+    function nextBackground() {
+        image.css('background',
+        backgrounds[current = ++current % backgrounds.length])
+
+        setTimeout(nextBackground, 6000);
+    }
+    setTimeout(nextBackground, 6000);
+    image.css('background', backgrounds[0])
+});
     
