@@ -274,84 +274,84 @@ function placeSearch(){
 
 // Section: Modal Information
 
-// Modal: London
-$(".feature-london").click(function(){
-  $('#modal-header').text("london");
-  $('#modal-country').text("England");
+// Modal: Sydney
+$(".feature-sydney").click(function(){
+  $('#modal-header').text("sydney");
+  $('#modal-country').text("Australia");
   $('#language-item').text("English");
-  $('#currency-item').text("Pound Sterling");
-  $('#temp-item').text("15");
-  $('#airport-item').text("London Heathrow Airport");
-  $('#guide-item').text("London is the capital and largest city of England and the United Kingdom, and is the largest urban area in Greater London. The River Thames travels through the city. London is the biggest city in western Europe, and the world's largest financial centre. ... London was founded by the Romans.");
+  $('#currency-item').text("Australian Dollar");
+  $('#temp-item').text(" 22");
+  $('#airport-item').text("Sydney Airport (SYD)");
+  $('#guide-item').text("Sydney is a very livable city with magnificent nature and vibrant cultural life. It is home to the largest fish market in the world and is also considered to be the most densely populated city in the entire continent.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1550954992-8e4ae3f6897b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
-  modalAttractions(51.509865,-0.118092)
+  modalAttractions(-33.8688197, 151.2092955)
     
 });
 
-// Modal: Cancun
-$(".feature-cancun").click(function(){
-  $('#modal-header').text("cancun");
-  $('#modal-country').text("mexico");
-  $('#language-item').text(" Spanish");
-  $('#currency-item').text(" Peso");
-  $('#temp-item').text(" 30");
-  $('#airport-item').text(" Cancun International Airport");
-  $('#guide-item').text("Cancun is considered to be the heart of the Mexican Caribbean and year on year thousands of visitors who come to the Yucatan Peninsula end up right here! The gorgeous beaches, great weather, and amazingly clear and clean waters are huge pulls for many tourists.");
+// Modal: Venice
+$(".feature-venice").click(function(){
+  $('#modal-header').text("venice");
+  $('#modal-country').text("italy");
+  $('#language-item').text(" Italian");
+  $('#currency-item').text(" Euros");
+  $('#temp-item').text(" 22");
+  $('#airport-item').text(" Treviso Airport (TSF)");
+  $('#guide-item').text("The image of a dazzling city built on water has captured the imagination of writers, travellers, and city planners the world over. St Petersburg in Russia was modelled on it, Venezuela was named after it. Venice has a special place in the world’s collective heart and imagination.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
-  modalAttractions(21.17429, -86.84656)
+  modalAttractions(45.4408474, 12.3155151)
 
 });
 
-// Modal: Santorini
-$(".feature-santorini").click(function(){
-  $('#modal-header').text("santorini");
-  $('#modal-country').text("greece");
-  $('#language-item').text(" Greek");
-  $('#currency-item').text(" Euro");
-  $('#temp-item').text(" 28");
-  $('#airport-item').text(" Santorini (Thira) National Airport");
-  $('#guide-item').text("When you close your eyes and dream of your Greek Island getaway do you imagine being perched on a cliff, looking out over the dazzling blue ocean, cool wine in hand, with blindingly white-washed houses behind you? Santorini is the one for you. Sure, you get this on the other islands that make up the Cyclades, but Santorini is the cream of the crop. When the ever-brilliant sunsets light up the cliffs and the buildings you may just think you’ve died and gone to heaven.");
+// Modal: Toronto
+$(".feature-toronto").click(function(){
+  $('#modal-header').text("toronto");
+  $('#modal-country').text("canada");
+  $('#language-item').text(" English");
+  $('#currency-item').text(" Canadian Dollar");
+  $('#temp-item').text(" 30");
+  $('#airport-item').text(" Saint Catherines Airport (YCM)");
+  $('#guide-item').text("If you’re planning a visit to Canada you’ll more likely than not be visiting Toronto. Because that’s the city from which you visit Niagra Falls, right? Well, yes, that is correct, but there is so much more to Toronto that its proximity to the spectacular waterfalls.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=722&q=80")
-  modalAttractions(36.393154, 25.461510)
+  modalAttractions(43.653226, -79.3831843)
 });
 
-// Modal: Florida
-$(".feature-florida").click(function(){
-  $('#modal-header').text("florida");
-  $('#modal-country').text("america");
-  $('#language-item').text(" English (US)");
-  $('#currency-item').text(" US Dollar");
+// Modal: Cape Town
+$(".feature-cape").click(function(){
+  $('#modal-header').text("Cape Town");
+  $('#modal-country').text("south africa");
+  $('#language-item').text(" English");
+  $('#currency-item').text(" South African Rand");
   $('#temp-item').text(" 32");
-  $('#airport-item').text(" Tampa International Airport");
-  $('#guide-item').text("Florida, otherwise known as the Sunshine State, is world-renowned for its year-round warm temperatures and attracts millions of visitors from all over the globe every year. Whilst the world-class theme parks – including Walt Disney World Resort, Universal Orlando Resort, SeaWorld Orlando and Discovery Cove - remain a major draw for holiday makers, the rest of the state has plenty to offer too.  With prices now comparable to other short and mid-haul package holiday destinations, what used to be a dream can now be turned into an exciting reality.");
+  $('#airport-item').text(" Cape Town International Airport (CPT)");
+  $('#guide-item').text("Awarded by New York Times as the best place in the world to visit in 2014, Cape Town is a beautiful port city located on the Southwest coast of Africa.  Famous for the Table Mountain, where at least two couples get hitched every month, and for the Castle of Good Hope that is the oldest colonial building in this part of Africa.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1542391085-dd1c64a52bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
-  modalAttractions(27.994402, -81.760254)
+  modalAttractions(-33.9248685, 18.4240553)
 });
 
-// Modal: Kingston
+// Modal: Zurich
 $(".feature-kingston").click(function(){
-  $('#modal-header').text("kingston");
-  $('#modal-country').text("jamaica");
-  $('#language-item').text(" Jamaican");
-  $('#currency-item').text(" Jamaican Dollar");
-  $('#temp-item').text(" 36");
-  $('#airport-item').text(" Norman Manley International Airport");
-  $('#guide-item').text("Probably the Caribbean’s best known country, Jamaica is known all over the world through the musical icon of Bob Marley. Music is life here in this tropical garden paradise, and the connection between the culture and nature is visceral. Dance the night away in one of Kingston dance halls or the epic beach parties of Negril.");
+  $('#modal-header').text("zurich");
+  $('#modal-country').text("Switzerland");
+  $('#language-item').text(" German");
+  $('#currency-item').text(" Swiss Franc");
+  $('#temp-item').text(" 19");
+  $('#airport-item').text(" Zurich Airport (ZRH)");
+  $('#guide-item').text("Home to many world’s major banks, lakes, mountains and parks, Zurich is a top tourist spot for many visitors. This charming city is also known as a global centre for banking and, therefore, attracts a lot of business clientele. Zurich has over 100 company hotels that are perfect for overnight stays. However, it is an expensive city, but the experience is more than worth it.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
-  modalAttractions(17.99702, -76.79358)
+  modalAttractions(47.3768866, 8.541694)
 });
 
-// Modal: Bali
-$(".feature-bali").click(function(){
-  $('#modal-header').text("bali");
-  $('#modal-country').text("idoneisa");
-  $('#language-item').text(" Indonesian");
-  $('#currency-item').text(" Indonesian rupiah");
+// Modal: Marrakech
+$(".feature-marrakech").click(function(){
+  $('#modal-header').text("marrakech");
+  $('#modal-country').text("morocco");
+  $('#language-item').text(" Arabic");
+  $('#currency-item').text(" Moroccan Dirham");
   $('#temp-item').text(" 27");
-  $('#airport-item').text(" Ngurah Rai International Airport");
-  $('#guide-item').text("Bali – the predominantly Buddhist island of Indonesia has a personality of its own compared to the others. Here you’ll find temples as beautiful as the people, intricate offerings laid out on the street only to be trampled by passing traffic, and multiple religious holidays every year. This is the ‘real’ Bali. The other side of Bali is that which has succumbed to rampant tourism – ‘Westerners Gone Wild’ strips of debauched behaviour and sunburnt skin.");
+  $('#airport-item').text(" Marrakech Menara Airport (RAK)");
+  $('#guide-item').text("The bustling Moroccan city of Marrakech will have you smiling ’til it hurts, licking your lips at the mouth watering food, scratching your head at the confusion, and shaking your head at how the madness just seems to work.");
   $('#modal-image').attr("src","https://images.unsplash.com/photo-1544959068-7c75914bf21e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80")
-  modalAttractions(-8.409518, 115.188919)
+  modalAttractions(31.6294723, -7.981084500000001)
 });
 
 
