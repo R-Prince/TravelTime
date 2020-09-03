@@ -607,8 +607,8 @@ $(function () {
     var image = $('.callout-container')
 
     var backgrounds = [
-      'url(https://images.unsplash.com/photo-1462400362591-9ca55235346a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1434&q=80) no-repeat fixed center', 
-      'url(https://images.unsplash.com/photo-1489914099268-1dad649f76bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat fixed center'];
+      'url(https://images.unsplash.com/photo-1501721836078-1a3678487370?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center', 
+      'url(https://images.unsplash.com/photo-1563293815-7d1c589bd909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80) no-repeat center'];
     var current = 0;
 
     function nextBackground() {

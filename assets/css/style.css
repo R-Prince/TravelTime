@@ -4,11 +4,11 @@
 
 /* Headers */
 
-.orange-header{
+.grey-header{
     font-family: "Exo", sans-serif;
     font-size: 2.5rem;
     margin: 3rem;
-    color: #F2AB9B;
+    color: #3D3D3D;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
 }
@@ -22,14 +22,25 @@
     letter-spacing: 0.2rem;
 }
 
+.orange-header{
+    font-family: "Exo", sans-serif;
+    font-size: 2.5rem;
+    margin: 3rem;
+    color: #F2AB9B;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
 .callout-header{
     font-family: "Exo", sans-serif;
     font-size: 350%;
+    color: black;
 }
 
 .callout-header-mobile{
     font-family: "Exo", sans-serif;
     font-size: 250%;
+    color: black;
 }
 
 .search-header{
@@ -37,6 +48,15 @@
     font-size: 235%;
     margin: 2rem;
     color: white;
+}
+
+.grey-modal-header{
+    font-family: "Exo", sans-serif;
+    font-size: 3rem;
+    margin: 0.5rem;
+    color: #3d3d3d;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 }
 
 .orange-modal-header{
@@ -48,18 +68,15 @@
     letter-spacing: 0.2rem;
 }
 
-.grey-modal-header{
-    font-family: "Exo", sans-serif;
-    font-size: 1.5rem;
-    margin: 1rem;
-    color: #C1D6D9;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-}
-
 /* Buttons */
 
-.btn-transparent{
+.btn-black{
+    border: 2px solid black;
+    color: black;
+    font-family: "Exo", sans-serif;
+}
+
+.btn-white{
     border: 2px solid white;
     color: white;
     font-family: "Exo", sans-serif;
@@ -77,10 +94,10 @@
 }
 
 .btn-grey{
-    border: 2px solid #C1D6D9;
+    border: 2px solid #A6ABAB;
     color: white;
     font-family: "Exo", sans-serif;
-    background-color: #C1D6D9;
+    background-color: #A6ABAB;
 }
 
 
@@ -95,13 +112,11 @@
     position: relative;
     top: 4rem;
     left: 2rem;
-    color: white;
 }
 
 .callout-section-mobile{
     position: relative;
     top: 4rem;
-    color: white;
 }
 
 .callout-text{
@@ -117,29 +132,29 @@
 /* Navbar */
 
 .nav-link{
-    color: white;
+    color: black;
 }
 
 .fa-bars{
-    color: white;
+    color: black;
     font-size: 1.5rem;
 }
 
 /* Section: Search */
 
 .search-container{
-    background-color: #C1D6D9;
+    background-color: #3D3D3D;
     height: max-content;
     padding-bottom: 3rem;
 }
 
 .search-bar{
     width: 100%;
-    border: 2px solid #C1D6D9;
+    border: 2px solid #3D3D3D;
 }
 
 input::placeholder {
-  color: #C1D6D9;
+  color: #3D3D3D;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -254,25 +269,34 @@ input::placeholder {
 /* Section: Modal*/
 
 #modal-country{
-    color: black;
+    color: #3d3d3d;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
     font-size: 1rem;
 }
 
 .modal-auto-country{
-    color: black;
+    color: #3d3d3d;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
     font-size: 1rem;
 }
 
-.modal-guide-header{
+.modal-guide{
     font-family: "Exo", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 1.5rem;
-    color: #F2AB9B;
+    color: #A6ABAB;
+}
+
+.grey-modal-title{
+    font-family: "Exo", sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #3d3d3d;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 }
 
 .quick-list{
@@ -295,7 +319,7 @@ input::placeholder {
 }
 
 .card-hr{
-    border: 1px solid #C1D6D9;
+    border: 1px solid #A6ABAB;
 }
 
 .card-list{
@@ -318,12 +342,12 @@ input::placeholder {
 
 /* Section: Contact Us */
 .contact-container{
-    background-color: #C1D6D9;
+    background-color: #3D3D3D;
 }
 
 /* Section: Footer*/
 .footer-container{
-    background-color: #F2AB9B;
+    background-color: #A6ABAB;
     padding: 5px 0 5px 0;
     font-family: "Exo", sans-serif;
 }
