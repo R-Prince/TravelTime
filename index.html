@@ -33,7 +33,7 @@
                     <li class="nav-item mr-2"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
-            <button onclick="document.location='#recommendations'" class="btn btn-orange btn-large d-none d-sm-block ml-auto">Recommendations</button>
+            <button onclick="document.location='#recommendations'" class="btn btn-orange btn-large d-none d-sm-block ml-auto">Get Inspired!</button>
         </nav>
 
         <!-- Callout: text-->
@@ -257,8 +257,20 @@
             </div>
             <div class="modal-body">
                 <div class="row mt-4">
-                    <div class="col-12 col-lg-8 mb-2">
-                        <img id="modal-image" class="img-fluid">
+                    <div class="col-12 col-lg-8 mb-4">
+                        <div class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img id="modal-image1" class="modal-image d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="modal-image2" class="modal-image d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="modal-image3" class="modal-image d-block w-100">
+                                </div>
+                            </div>
+                        </div>   
                     </div>
                     <div class="col-12 col-lg-4">
                         <h5 class="modal-guide">Quick Guide</h5>
