@@ -33,19 +33,19 @@
 
 .callout-header{
     font-family: "Exo", sans-serif;
-    font-size: 3.5%;
+    font-size: 3.5rem;
     color: white;
 }
 
 .callout-header-mobile{
     font-family: "Exo", sans-serif;
-    font-size: 2.5%;
+    font-size: 2.5rem;
     color: white;
 }
 
 .search-header{
     font-family: "Exo", sans-serif;
-    font-size: 235%;
+    font-size: 2.3rem;
     margin: 2rem;
     color: white;
 }
