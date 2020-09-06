@@ -116,7 +116,7 @@
 
 .callout-section-mobile{
     position: relative;
-    top: 4rem;
+    top: 8rem;
 }
 
 .callout-text{
@@ -299,10 +299,6 @@ input::placeholder {
     color: #3d3d3d;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-}
-
-.modal-image{
-    height: 75vh;
 }
 
 .quick-list{
