@@ -7,20 +7,20 @@ function startAuto(){
         types: ['(cities)']}
     );
 
-    autocomplete.addListener('place_changed', placeSearch)
+    autocomplete.addListener('place_changed', placeSearch);
         
 }
 
 function placeSearch(){
     var place = autocomplete.getPlace();
     var lat = place.geometry.location.lat();
-    var lng = place.geometry.location.lng()
+    var lng = place.geometry.location.lng();
 
     console.log(place);
 
     modalAttractions(lat,lng);
 
-    $('#modal-auto-info').modal('show')
+    $('#modal-auto-info').modal('show');
     $('#modal-auto-header').text(place.name);
     $('#modal-auto-country').text(place.formatted_address);
 
@@ -50,7 +50,7 @@ function placeSearch(){
                 location: city,
                 radius: '500',
                 query: 'lodging'
-            }
+            };
 
             service = new google.maps.places.PlacesService(map);
             service.textSearch(request, callback);
@@ -69,9 +69,9 @@ function placeSearch(){
                         name: place.name,
                         address: place.formatted_address,
                         rating: place.rating
-                    })
+                    });
 
-                    const infowindow = new google.maps.InfoWindow({
+                    var infowindow = new google.maps.InfoWindow({
                         maxWidth: 300
                     });
                     marker.addListener('click', function() {
@@ -81,7 +81,7 @@ function placeSearch(){
                         "<strong>Address: </strong>" + this.address + "<br>" + 
                         "<strong>Rating: </strong>" + this.rating +
                         "</div>"
-                    )
+                    );
                     infowindow.open(map, this);
                     });
                 }
@@ -148,9 +148,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingOne').html(ratingHtml);
                         }
@@ -169,9 +169,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingTwo').html(ratingHtml);
                         }
@@ -190,9 +190,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingThree').html(ratingHtml);
                         }
@@ -211,9 +211,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingFour').html(ratingHtml);
                         }
@@ -232,9 +232,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingFive').html(ratingHtml);
                         }
@@ -254,9 +254,9 @@ function placeSearch(){
                         var ratingHtml = '';
                         for (var i = 0; i < 5; i++) {
                             if (place.rating < (i + 0.5)) {
-                                ratingHtml += '<i class="far fa-star"></i>'
+                                ratingHtml += '<i class="far fa-star"></i>';
                             } else {
-                                ratingHtml += '<i class="fas fa-star"></i>'
+                                ratingHtml += '<i class="fas fa-star"></i>';
                             }
                             $('#autoHotelRatingSix').html(ratingHtml);
                         }
@@ -283,10 +283,10 @@ $(".feature-sydney").click(function(){
   $('#temp-item').text(" 22");
   $('#airport-item').text("Sydney Airport (SYD)");
   $('#guide-item').text("Sydney is a very livable city with magnificent nature and vibrant cultural life. It is home to the largest fish market in the world and is also considered to be the most densely populated city in the entire continent.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1528800223624-764941bb49db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1466&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1566155676296-132ad1edce95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1556763947-80fd07e395ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80")
-  modalAttractions(-33.8688197, 151.2092955)
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1528800223624-764941bb49db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1466&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1566155676296-132ad1edce95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1556763947-80fd07e395ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80");
+  modalAttractions(-33.8688197, 151.2092955);
     
 });
 
@@ -299,10 +299,10 @@ $(".feature-venice").click(function(){
   $('#temp-item').text(" 22");
   $('#airport-item').text(" Treviso Airport (TSF)");
   $('#guide-item').text("The image of a dazzling city built on water has captured the imagination of writers, travellers, and city planners the world over. St Petersburg in Russia was modelled on it, Venezuela was named after it. Venice has a special place in the world’s collective heart and imagination.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1523270805298-a339734e463e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1536183638923-a000c24b1645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1418&q=80")
-  modalAttractions(45.4408474, 12.3155151)
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1523270805298-a339734e463e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1536183638923-a000c24b1645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1418&q=80");
+  modalAttractions(45.4408474, 12.3155151);
 
 });
 
@@ -315,11 +315,11 @@ $(".feature-toronto").click(function(){
   $('#temp-item').text(" 30");
   $('#airport-item').text(" Saint Catherines Airport (YCM)");
   $('#guide-item').text("If you’re planning a visit to Canada you’ll more likely than not be visiting Toronto. Because that’s the city from which you visit Niagra Falls, right? Well, yes, that is correct, but there is so much more to Toronto that its proximity to the spectacular waterfalls.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1477173860144-6f21cf27086a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1541781286675-7b70223358d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1550958940-1b59399ca81b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80")
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1477173860144-6f21cf27086a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1541781286675-7b70223358d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1550958940-1b59399ca81b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
   
-  modalAttractions(43.653226, -79.3831843)
+  modalAttractions(43.653226, -79.3831843);
 });
 
 // Modal: Cape Town
@@ -331,10 +331,10 @@ $(".feature-cape").click(function(){
   $('#temp-item').text(" 32");
   $('#airport-item').text(" Cape Town International Airport (CPT)");
   $('#guide-item').text("Awarded by New York Times as the best place in the world to visit in 2014, Cape Town is a beautiful port city located on the Southwest coast of Africa.  Famous for the Table Mountain, where at least two couples get hitched every month, and for the Castle of Good Hope that is the oldest colonial building in this part of Africa.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1530187589563-1ff5b061d4f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1469&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1522406207105-f182bbb0b380?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1560173931-92117e84b893?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1549&q=80")
-  modalAttractions(-33.9248685, 18.4240553)
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1530187589563-1ff5b061d4f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1469&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1522406207105-f182bbb0b380?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1560173931-92117e84b893?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1549&q=80");
+  modalAttractions(-33.9248685, 18.4240553);
 });
 
 // Modal: Zurich
@@ -346,10 +346,10 @@ $(".feature-zurich").click(function(){
   $('#temp-item').text(" 19");
   $('#airport-item').text(" Zurich Airport (ZRH)");
   $('#guide-item').text("Home to many world’s major banks, lakes, mountains and parks, Zurich is a top tourist spot for many visitors. This charming city is also known as a global centre for banking and, therefore, attracts a lot of business clientele. Zurich has over 100 company hotels that are perfect for overnight stays. However, it is an expensive city, but the experience is more than worth it.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1544030134-c0883e9e4046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1557934447-52c74b70fee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1567156628531-95047dde50d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80")
-  modalAttractions(47.3768866, 8.541694)
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1544030134-c0883e9e4046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1557934447-52c74b70fee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1567156628531-95047dde50d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  modalAttractions(47.3768866, 8.541694);
 });
 
 // Modal: Marrakech
@@ -361,10 +361,10 @@ $(".feature-marrakech").click(function(){
   $('#temp-item').text(" 27");
   $('#airport-item').text(" Marrakech Menara Airport (RAK)");
   $('#guide-item').text("The bustling Moroccan city of Marrakech will have you smiling ’til it hurts, licking your lips at the mouth watering food, scratching your head at the confusion, and shaking your head at how the madness just seems to work.");
-  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1580816256869-3e870e8b948f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80")
-  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1572282924904-41bacfbd86a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80")
-  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1535191059345-c16453b851b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80")
-  modalAttractions(31.6294723, -7.981084500000001)
+  $('#modal-image1').attr("src","https://images.unsplash.com/photo-1580816256869-3e870e8b948f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  $('#modal-image2').attr("src","https://images.unsplash.com/photo-1572282924904-41bacfbd86a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80");
+  $('#modal-image3').attr("src","https://images.unsplash.com/photo-1535191059345-c16453b851b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+  modalAttractions(31.6294723, -7.981084500000001);
 });
 
 
@@ -394,7 +394,7 @@ function modalAttractions(a,b){
             location: city,
             radius: '500',
             query: 'lodging'
-        }
+        };
 
         service = new google.maps.places.PlacesService(map);
         service.textSearch(request, callback);
@@ -413,9 +413,9 @@ function modalAttractions(a,b){
                     name: place.name,
                     address: place.formatted_address,
                     rating: place.rating
-                })
+                });
 
-                const infowindow = new google.maps.InfoWindow({
+                var infowindow = new google.maps.InfoWindow({
                     maxWidth: 300
                 });
                 marker.addListener('click', function() {
@@ -425,7 +425,7 @@ function modalAttractions(a,b){
                     "<strong>Address: </strong>" + this.address + "<br>" + 
                     "<strong>Rating: </strong>" + this.rating +
                     "</div>"
-                )
+                );
                 infowindow.open(map, this);
                 });
             }
@@ -492,9 +492,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingOne').html(ratingHtml);
                     }
@@ -513,9 +513,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingTwo').html(ratingHtml);
                     }
@@ -534,9 +534,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingThree').html(ratingHtml);
                     }
@@ -555,9 +555,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingFour').html(ratingHtml);
                     }
@@ -576,9 +576,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingFive').html(ratingHtml);
                     }
@@ -598,9 +598,9 @@ function modalAttractions(a,b){
                     var ratingHtml = '';
                     for (var i = 0; i < 5; i++) {
                         if (place.rating < (i + 0.5)) {
-                            ratingHtml += '<i class="far fa-star"></i>'
+                            ratingHtml += '<i class="far fa-star"></i>';
                         } else {
-                            ratingHtml += '<i class="fas fa-star"></i>'
+                            ratingHtml += '<i class="fas fa-star"></i>';
                         }
                         $('#hotelRatingSix').html(ratingHtml);
                     }
@@ -617,7 +617,7 @@ function modalAttractions(a,b){
 /* Image Slider for Landing Page */
 
 $(function () {
-    var image = $('.callout-container')
+    var image = $('.callout-container');
 
     var backgrounds = [
       'url(https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center', 
@@ -626,11 +626,11 @@ $(function () {
 
     function nextBackground() {
         image.css('background',
-        backgrounds[current = ++current % backgrounds.length])
+        backgrounds[current = ++current % backgrounds.length]);
 
         setTimeout(nextBackground, 6000);
     }
     setTimeout(nextBackground, 6000);
-    image.css('background', backgrounds[0])
+    image.css('background', backgrounds[0]);
 });
     
