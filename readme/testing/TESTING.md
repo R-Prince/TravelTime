@@ -1,5 +1,5 @@
 # Testing 
-[README.md](README.md)
+[README.md](/README.md)
 
 [W3C Markup validation service](https://validator.w3.org/) was used to test site and ensure no errors were made. When the website was run through the website 5 errors were found;
 
