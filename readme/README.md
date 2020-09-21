@@ -52,11 +52,11 @@ This website helps users achieve this goal by:
 
 ## Wireframes
 
-[Desktop Wireframe](TravelTimeDesktopWireframe.pdf)
+[Desktop Wireframe](/readme/wireframes/TravelTimeDesktopWireframe.pdf)
 
-[Tablet Wireframe](TravelTimeTabletWireframe.pdf)
+[Tablet Wireframe](/readme/wireframes/TravelTimeTabletWireframe.pdf)
 
-[Mobile Wireframe](TravelTimeMobileWireframe.pdf)
+[Mobile Wireframe](/readme/wireframes/TravelTimeMobileWireframe.pdf)
 
 # Features
 
@@ -137,7 +137,7 @@ HTML, CSS and Javascript languages were used to programme the website.
 [Email JS SDK](https://www.emailjs.com/) - The project uses the email JS SDK to allow users to contact the Travel Time team.  
 
 # Testing
-Testing information can be found in separate [TESTING.md file](TESTING.md)
+Testing information can be found in separate [TESTING.md file](readme/testing/TESTING.md)
 
 # Deployment
 
