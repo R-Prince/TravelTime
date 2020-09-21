@@ -1,5 +1,5 @@
 # Testing 
-[README.md](readme/README.md)
+[README.md](README.md)
 
 [W3C Markup validation service](https://validator.w3.org/) was used to test site and ensure no errors were made. When the website was run through the website 5 errors were found;
 
@@ -11,9 +11,9 @@
 	- This was present throughout the pages on the website which have now 	been fixed.
 5. The “aria-labelledby” attribute must point to an element in the same document (line 242).
 
-[JSHint](https://jshint.com/) was used to test the javascript code and ensure no errors or typos were returned . When the JS code was run through the website a total of [51 warnings](readme/testing/testingScreenshots/jsHintTesting.png) was returned which mostly consisted of missing semi-colons and undefined variables. 
+[JSHint](https://jshint.com/) was used to test the javascript code and ensure no errors or typos were returned . When the JS code was run through the website a total of [51 warnings](/readme/testing/testingScreenshots/jsHintTesting.png) was returned which mostly consisted of missing semi-colons and undefined variables. 
 
-## Testing client stories from UX section of README.md
+## Testing client stories from UX section of README
 
 1. As a new visitor to the website, I want to easily be able to search for my next holiday destination. 
     1. Once the user lands on the page they are able to see the title “Search for your next destination”
@@ -55,7 +55,7 @@ Navigation Icon;
 3. Change display from desktop to mobile to ensure navigation icon is positioned correctly.
 
 Issues
-1. On tablet and medium screen sizes the search section did display correctly as the navigation bar pushed content over the search bar [preview](readme/testing/testingScreenshots/tabletDisplayError.png)
+1. On tablet and medium screen sizes the search section did display correctly as the navigation bar pushed content over the search bar [preview](/readme/testing/testingScreenshots/tabletDisplayError.png)
 
 Call to action button;
 1. Click on “get inspired” button and ensure it directs the user to the recommendation section.
@@ -138,29 +138,29 @@ Close buttons;
 
 ## Javascript manual logical testing
 
-### Contact form
+### Contact form
 1. Enter details into the form and click send to ensure the correct information is sent to the site owners email address. 
 
 Issues
 1. No success notification appeared to confirm to the user that their message was sent. 
-2. The data remained in the contact form after submission [preview](readme/testing/testingScreenshots/contactFormError.png)
+2. The data remained in the contact form after submission [preview](/readme/testing/testingScreenshots/contactFormError.png)
 
 ### Google Maps Api
 1. Ensure the location on the map is correct in relation to the city searched. 
 2. Ensure the markers displayed are within the radius specified. 
 3. Ensure the markers displayed on the map are in relation to the desired points of interest.
 4. Click on markers to ensure an information window appears. 
-5. Ensure the data in the information window is correct [preview](readme/testing/testingScreenshots/googleMapsInfoWindow.png).
+5. Ensure the data in the information window is correct [preview](/readme/testing/testingScreenshots/googleMapsInfoWindow.png).
 
 ### Google Place Api
 1. Ensure the returned information from the google place API is in relation to the city selected. 
 2. Ensure the data returned is displayed correctly in the hotel cards i.e image, name, address, user rating and website link. 
 
 Issues
-1. Some hotels did not return the correct data or was missing data such as an image of the facility [preview](readme/testing/testingScreenshots/googlePlaceApiImageError.png).
+1. Some hotels did not return the correct data or was missing data such as an image of the facility [preview](/readme/testing/testingScreenshots/googlePlaceApiImageError.png).
 
-### Google Autocomplete Place Search
-1. Ensure when you click the search bar and start to type data the google autocomplete predicts the city based on the data typed [preview](readme/testing/testingScreenshots/googleAutoSearchBar.png).
+### Google Autocomplete Place Search
+1. Ensure when you click the search bar and start to type data the google autocomplete predicts the city based on the data typed [preview](/readme/testing/testingScreenshots/googleAutoSearchBar.png).
 
 
 
