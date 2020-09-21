@@ -68,6 +68,10 @@
     letter-spacing: 0.2rem;
 }
 
+.success-modal-title{
+    color: #F2AB9B;
+}
+
 /* Buttons */
 
 .btn-black{

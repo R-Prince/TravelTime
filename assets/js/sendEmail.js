@@ -6,6 +6,8 @@ function sendMail(contactForm){
         "from_email": contactForm.email.value,
         "from_number": contactForm.number.value
     });
-
+    
+    $("#successModal").modal();
+    
     return false;
-}
+};
