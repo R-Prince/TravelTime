@@ -1,5 +1,151 @@
-
 document.getElementById("autocomplete").addEventListener("click", startAuto);
+
+// Google autocomplete api for search bar
+function startAuto(){
+    autocomplete = new google.maps.places.Autocomplete(
+        (document.getElementById('autocomplete')), {
+        types: ['(cities)']}
+    );
+    autocomplete.addListener('place_changed', placeSearch);
+};
+
+// Google Maps API - Open modal and returns a city and map based on users search. 
+function placeSearch(){
+    var place = autocomplete.getPlace();
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
+
+    console.log(place);
+    console.log(lat);
+    console.log(lng);
+
+    $('#modal-auto-info').modal('show');
+    $('#modal-auto-header').text(place.name);
+    $('#modal-auto-country').text(place.formatted_address);
+    
+    autoMap(lat,lng);
+};
+
+// Google Maps API - Opens a map on the modal based on the city selected
+function autoMap(lat,lng) {
+    var lat = lat;
+    var lng = lng;
+    var city = new google.maps.LatLng(lat,lng);
+
+    map = new google.maps.Map(document.getElementById('mapAuto'), {
+        center: city,
+        zoom: 15
+    });
+
+    var resturants = {
+        location: city,
+        radius: '500',
+        query: ['restaurant']
+    };
+
+    var hotels = {
+        location: city,
+        radius: '500',
+        query: ['lodging']
+    };
+
+    var attractions = {
+        location: city,
+        radius: '500',
+        query: ['tourist_attraction']
+    };
+    
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(resturants, callback);
+    service.textSearch(attractions, callback);
+    service.textSearch(hotels, hotelResults);
+};
+
+// Google Maps API - Callback function that drops markers on the map which are restuarants and attractions in the city
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            marker = new google.maps.Marker({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                position: place.geometry.location,
+                name: place.name,
+                address: place.formatted_address,
+                rating: place.rating,
+                icon: place.icon
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 300
+            });
+
+            marker.addListener('click', function() {
+            infowindow.setContent(
+                "<div><strong>" + 
+                this.name + "</strong><br>" + 
+                "<strong>Address: </strong>" + this.address + "<br>" + 
+                "<strong>Rating: </strong>" + this.rating +
+                "</div>"
+                );
+                infowindow.open(map, this);
+            });
+        }
+    }    
+}
+
+// Google Place API - Using place ids this function returns information on the hotels used for the cards
+function hotelResults(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < 6; i++) {
+            var placeIds = results[i].place_id;
+            var request = {
+                placeId: placeIds,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            }
+            service = new google.maps.places.PlacesService(map);
+            service.getDetails(request, hotelCards);   
+        };
+    };    
+};
+
+// Google Place API - This function uses the information returned from the search and creates html hotel cards
+function hotelCards(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        var place = results;
+        if (place.rating) {
+            var ratingHtml = '';
+            for (var i = 0; i < 5; i++) {
+                if (place.rating < (i + 0.5)) {
+                    ratingHtml += '<i class="far fa-star"></i>';
+                } else {
+                    ratingHtml += '<i class="fas fa-star"></i>';
+                }
+            }
+        }
+        $("#hotelCards").append(
+        `<div class="col-12 col-lg-4 mb-3">
+            <div class="card">
+                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="card-img-top" alt="Image of the hotel">
+                <div class="card-body text-center">
+                    <ul class="card-list">
+                        <li class="card-item font-weight-bolder">${place.name}</li>
+                        <li  class="card-item">${place.vicinity}</li>  
+                    </ul>
+                    <hr class="card-hr">
+                    <ul class="card-list">
+                        <li class="card-item">${ratingHtml}</li>
+                    </ul>
+                        <a href=${place.website} target="_blank" class="btn btn-orange">Book Now</a>
+                </div>
+            </div>
+        </div>`);
+    }
+}
+
+
+
+/*document.getElementById("autocomplete").addEventListener("click", startAuto);
 
 function startAuto(){
     autocomplete = new google.maps.places.Autocomplete(
@@ -612,7 +758,7 @@ function modalAttractions(a,b){
   
     } 
     modalMap();
-}
+}*/
 
 /* Image Slider for Landing Page */
 
