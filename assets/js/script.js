@@ -143,7 +143,10 @@ function hotelCards(results, status){
     }
 }
 
-
+// Remove previous HTML hotel cards, ready for the next search. 
+function removeCards(){
+    $("#hotelCards").empty();
+}
 
 /*document.getElementById("autocomplete").addEventListener("click", startAuto);
 
