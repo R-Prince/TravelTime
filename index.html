@@ -160,23 +160,23 @@
                 <div class="col-12 col-md-6">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
                         </div>   
                     </div>
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <input type="text" name="number" class="form-control" placeholder="Contact Number">
+                            <input type="text" name="number" class="form-control" id="number" placeholder="Contact Number">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <textarea class="form-control" name="text" rows="10" placeholder="Please type your enquiry here..." required></textarea>
+                        <textarea class="form-control" name="text" rows="10" id="enquiry" placeholder="Please type your enquiry here..." required></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-white btn-lg mt-1 mb-2">Send</button>
@@ -198,7 +198,7 @@
                     <p>Please allow up to 24 hours for a response.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-orange" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-orange" data-dismiss="modal" onclick="removeText()">Close</button>
                 </div>
             </div>
         </div>

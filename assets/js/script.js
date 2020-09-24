@@ -145,6 +145,13 @@ function removeCards(){
     $('#quick-guide').empty();
 }
 
+function removeText(){
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('number').value = '';
+    document.getElementById('enquiry').value = '';    
+}
+
 // Modal: Add quick guide HTML for Travel Time picks
 $(".guide-html").click(function(){
    $('#quick-guide').append(` <div class="row mt-4 container">
