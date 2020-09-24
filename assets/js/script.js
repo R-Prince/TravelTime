@@ -143,8 +143,10 @@ function hotelCards(results, status){
 function removeCards(){
     $("#hotelCards").empty();
     $('#quick-guide').empty();
+    document.getElementById('autocomplete').value = '';
 }
 
+// Remove user input from contact form.
 function removeText(){
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
@@ -280,7 +282,6 @@ $(".feature-marrakech").click(function(){
 });
 
 /* Image Slider for Landing Page */
-
 $(function () {
     var image = $('.callout-container');
 
