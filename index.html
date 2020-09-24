@@ -22,7 +22,6 @@
     <section class="container-fluid callout-container">
         
         <!-- Navbar-->
-
         <nav class="navbar">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i></button>       
@@ -37,14 +36,12 @@
         </nav>
 
         <!-- Callout: text-->
-
         <div class="d-none d-sm-block col-sm-6 callout-section">
             <h1 class="callout-header">Travel Time</h1>
             <p class="callout-text">Search for your next holiday destination or browse our hand-picked selection which recommends the greatest destinations in the world.</p>
         </div>
 
         <!-- Callout: mobile text-->
-
         <div class="text-center d-sm-none callout-section-mobile">
             <h1 class="callout-header-mobile">Travel Time</h1>
             <p class="callout-text-mobile">Search for your next holiday destination or browse our hand-picked selection.</p>
@@ -52,7 +49,6 @@
     </section>
 
     <!--Section: Search --> 
-
     <section id="search" class="container-fluid search-container text-center">
         <div class="row">
             <div class="col-12">
@@ -69,7 +65,6 @@
     </section>
 
     <!-- Section: Recommendations -->
-
     <section id="recommendations" class="container pb-5">
         <div class="row">
             <div class="col-12 text-center">
@@ -77,37 +72,37 @@
             </div>
         </div>
         <div class="row">
-            <div class="feature-venice feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
-                <div class="venice" data-toggle="modal" data-target="#modal-info">
+            <div class="guide-html feature-venice feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+                <div class="venice" data-toggle="modal" data-target="#modal-page">
                     <h3 class="recommendation-city">Venice</h3>
                     <span class="recommendation-country">Italy</span>
                 </div>
             </div>
-            <div class="feature-sydney feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+            <div class="guide-html feature-sydney feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
                 <div class="sydney" data-toggle="modal" data-target="#modal-info">
                     <h3 class="recommendation-city">Sydney</h3>
                     <span class="recommendation-country">Australia</span>
                 </div>
             </div>
-            <div class="feature-toronto feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+            <div class="guide-html feature-toronto feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
                 <div class="toronto" data-toggle="modal" data-target="#modal-info">
                     <h3 class="recommendation-city">Toronto</h3>
                     <span class="recommendation-country">Canada</span>
                 </div>
             </div>
-            <div class="feature-cape feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+            <div class="guide-html feature-cape feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
                 <div class="cape" data-toggle="modal" data-target="#modal-info">
                     <h3 class="recommendation-city">Cape Town</h3>
                     <span class="recommendation-country">South Africa</span>
                 </div>
             </div>
-            <div class="feature-zurich feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+            <div class="guide-html feature-zurich feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
                 <div class="zurich" data-toggle="modal" data-target="#modal-info">
                     <h3 class="recommendation-city">Zurich</h3>
                     <span class="recommendation-country">Switzerland</span>
                 </div>
             </div>
-            <div class="feature-marrakech feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+            <div class="guide-html feature-marrakech feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
                 <div class="marrakech" data-toggle="modal" data-target="#modal-info">
                     <h3 class="recommendation-city">Marrakech</h3>
                     <span class="recommendation-country">Morocco</span>
@@ -116,201 +111,41 @@
         </div>
     </section>
 
-    <!-- Section: Autocomplete Modal -->
-    
-    <div class="modal fade" id="modal-auto-info" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content container">
-            <div class="row">
-                <div class="col-12">
-                    <button type="button" class="close ml-auto btn-close-modal" data-dismiss="modal" aria-label="Close" onclick="removeCards()">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 id="modal-auto-header" class="orange-modal-header"></h2>
-                    <span id="modal-auto-country" class="modal-auto-country"></span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="col-12">
-                    <h5 class="grey-modal-title">Points of Interest</h5>
-                </div>
-                <div class="col-12">
-                    <div id="mapAuto"></div>
-                </div>
-                <div class="col-12">
-                    <h2 class=" text-center grey-header">Hotels</h2>
-                </div>
-                <div id="hotelCards" class="row"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-grey" data-dismiss="modal" onclick="removeCards()">Close</button>   
-            </div>
-        </div>
-    </div>
-    </div>
-
     <!-- Section: Modal -->
-    <div class="modal fade" id="modal-info" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content container">
-            <div class="row">
-                <div class="col-12">
-                    <button type="button" class="close ml-auto btn-close-modal" data-dismiss="modal"    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 id="modal-header" class="orange-modal-header"></h2>
-                    <span id="modal-country"></span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="row mt-4">
-                    <div class="col-12 col-lg-8 mb-4">
-                        <div class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img id="modal-image1" src="..." alt="image of city center" class="img-fluid">
-                                </div>
-                                <div class="carousel-item">
-                                    <img id="modal-image2" src="..." alt="image of city center" class="img-fluid">
-                                </div>
-                                <div class="carousel-item">
-                                    <img id="modal-image3" src="..." alt="image of city center" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>   
+    <div class="modal fade" id="modal-page" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content container">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="close ml-auto btn-close-modal" data-dismiss="modal" aria-label="Close" onclick="removeCards()">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="col-12 col-lg-4">
-                        <h5 class="modal-guide">Quick Guide</h5>
-                        <ul class="quick-list">
-                            <li class="quick-item"><i class="quick-icon far fa-comments"></i><span id="language-item"></span></li>
-                            <li class="quick-item"><i class="quick-icon fas fa-hand-holding-usd"></i><span id="currency-item"></span></li>
-                            <li class="quick-item"><i class="quick-icon fas fa-temperature-low"></i><span id="temp-item"></span></li>
-                            <li class="quick-item"><i class="quick-icon fas fa-plane-departure"></i><span id="airport-item"></span></li>
-                            <li id="guide-item" class="quick-item"></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <h5 class="grey-modal-title">Points of Interest</h5>
-                </div>
-                <div class="col-12">
-                    <div id="mapModal"></div>
-                </div>
-                <div class="col-12">
-                    <h5 class=" text-center grey-header">Hotels</h5>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageOne" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameOne"></li>
-                                    <li  class="card-item" id="hotelAddressOne"></li> 
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingOne"></li>
-                                </ul>
-                                <a id="hotelBookOne" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageTwo" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameTwo"></li>
-                                    <li  class="card-item" id="hotelAddressTwo"></li>
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingTwo"></li>
-                                </ul>
-                                <a id="hotelBookTwo" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageThree" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameThree"></li>
-                                    <li  class="card-item" id="hotelAddressThree"></li>
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingThree"></li>
-                                </ul>
-                                <a id="hotelBookThree" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageFour" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameFour"></li>
-                                    <li  class="card-item" id="hotelAddressFour"></li>
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingFour"></li>
-                                </ul>
-                                <a id="hotelBookFour" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageFive" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameFive"></li>
-                                    <li  class="card-item" id="hotelAddressFive"></li> 
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingFive"></li>
-                                </ul>
-                                <a id="hotelBookFive" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mb-3">
-                        <div class="card">
-                            <img id="hotelImageSix" src="..." class="card-img-top" alt="Image of the hotel">
-                            <div class="card-body text-center">
-                                <ul class="card-list">
-                                    <li class="card-item font-weight-bolder" id="hotelNameSix"></li>
-                                    <li  class="card-item" id="hotelAddressSix"></li>
-                                </ul>
-                                <hr class="card-hr">
-                                <ul class="card-list">
-                                    <li class="card-item" id="hotelRatingSix"></li>
-                                </ul>
-                                <a id="hotelBookSix" href="" target="_blank" class="btn btn-orange">Book Now</a>
-                            </div>
-                        </div>
+                    <div class="col-12 text-center">
+                        <h2 id="modal-auto-header" class="orange-modal-header"></h2>
+                        <span id="modal-auto-country" class="modal-auto-country"></span>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-grey" data-dismiss="modal">Close</button>
+                <div id="quick-guide" class="row"></div>
+                <div class="modal-body">
+                    <div class="col-12">
+                        <h5 class="grey-modal-title">Points of Interest</h5>
+                    </div>
+                    <div class="col-12">
+                        <div id="mapAuto"></div>
+                    </div>
+                    <div class="col-12">
+                        <h2 class=" text-center grey-header">Hotels</h2>
+                    </div>
+                    <div id="hotelCards" class="row"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-grey" data-dismiss="modal" onclick="removeCards()">Close</button>   
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Section: Contact -->
