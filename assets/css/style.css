@@ -341,6 +341,11 @@ input::placeholder {
     height: 250px;
 }
 
+.hotelText{
+    color: #46B39D;
+    font-size: 1.1em;
+}
+
 .auto-image-results{
     height: 250px;
     width: 250px;

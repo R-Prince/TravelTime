@@ -122,7 +122,7 @@ function hotelCards(results, status){
         $("#hotelCards").append(
         `<div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="card-img-top" alt="Image of the hotel">
+                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="img-fluid card-img-top" alt="Image of the hotel">
                 <div class="card-body text-center">
                     <ul class="card-list">
                         <li class="card-item font-weight-bolder">${place.name}</li>
@@ -132,7 +132,7 @@ function hotelCards(results, status){
                     <ul class="card-list">
                         <li class="card-item">${ratingHtml}</li>
                     </ul>
-                        <a href=${place.website} target="_blank" class="btn btn-orange">Book Now</a>
+                        <a href=${place.website} target="_blank" class="btn btn-orange">Visit Website</a>
                 </div>
             </div>
         </div>`);
@@ -143,6 +143,7 @@ function hotelCards(results, status){
 function removeCards(){
     $("#hotelCards").empty();
     $('#quick-guide').empty();
+    $('#topPicks').empty();
     document.getElementById('autocomplete').value = '';
 }
 
@@ -182,8 +183,33 @@ $(".guide-html").click(function(){
             <li id="guide-item" class="quick-item"></li>
         </ul>
     </div>
-    </div>`)
+    </div>`);
 });
+
+$('.top-picks').click(function(){
+    for (var i = 0; i < 3; i++) {
+        $('#topPicks').append(
+            `<div class="col-12 col-lg-4 mb-3">
+                <div class="card">
+                    <img src="..." class="img-fluid card-img-top${i}" alt="Image of the hotel">
+                    <div class="card-body text-center">
+                        <ul class="card-list">
+                            <li class="card-item hotelName${i} font-weight-bolder"></li>
+                            <li  class="card-item hotelAddress${i}"></li>  
+                        </ul>
+                        <hr class="card-hr">
+                        <ul class="card-list">
+                            <li class="hotelText card-item">TRAVEL TIME PICK <i class="fas fa-medal"></i></li>
+                            <li class="card-item"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+                        </ul>
+                            <a href="" target="_blank" class="hotelWebsite${i} btn btn-orange">Book Now</a>
+                    </div>
+                </div>
+            </div>`
+        );
+    };
+});
+
 
 // Modal: Venice
 $(".feature-venice").click(function(){ 
@@ -199,6 +225,18 @@ $(".feature-venice").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1523270805298-a339734e463e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1536183638923-a000c24b1645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1418&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1572166292333-4dd297b6409d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1594560913036-d15f23f8a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1556455420-3305b8256448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('.hotelName0').text("Ca'Pagan");
+  $('.hotelName1').text("Palazzo Veneziano");
+  $('.hotelName2').text("H10 Palazzo Canova");
+  $('.hotelAddress0').text("Calle de le Carozze");
+  $('.hotelAddress1').text("Fondamenta Zattere Al Ponte");
+  $('.hotelAddress2').text("744 Riva del Vin, San Polo");
+  $('.hotelWebsite0').attr("href","https://www.capagan.com/?utm_source=google&utm_medium=organic&utm_campaign=GoogleMyBusiness");
+  $('.hotelWebsite1').attr("href","https://www.blastnessbooking.com/reservations/risultato.html?lingua_int=eng&id_albergo=16429&id_stile=14017&id_gruppo=18451&dc_gruppo=2543&dc=6131&gg=25&mm=9&aa=2020&a_date=25%2F09%2F2020&notti_1=1&tot_camere=1&tot_adulti=2&tot_bambini=0&generic_codice=&_gfc_cli=16010414769248914&_ga=2.267384142.1792683260.1601041491-662343565.1601041491");
+  $('.hotelWebsite2').attr("href","https://www.h10hotels.com/en/venice-hotels/h10-palazzo-canova/rooms");
 });
 
 // Modal: Sydney
@@ -215,6 +253,18 @@ $(".feature-sydney").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1528800223624-764941bb49db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1466&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1566155676296-132ad1edce95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1556763947-80fd07e395ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1570213489059-0aac6626cade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1560662105-57f8ad6ae2d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1529290130-4ca3753253ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
+  $('.hotelName0').text("Meriton Suites");
+  $('.hotelName1').text("Shangri-La Hotel");
+  $('.hotelName2').text("Sydney Boutique Hotel");
+  $('.hotelAddress0').text("528 Kent St, Sydney");
+  $('.hotelAddress1').text("176 Cumberland St, The Rocks");
+  $('.hotelAddress2').text("114 Darlinghurst Rd, Darlinghurst");
+  $('.hotelWebsite0').attr("href","https://www.meritonsuites.com.au/");
+  $('.hotelWebsite1').attr("href","https://www.shangri-la.com/en/sydney/shangrila/reservations/select-room-rate/?hotel=Shangri-La%20Hotel%2C%20Sydney&hotelCode=SLSN&timeZone=%2B10&city=Sydney&checkInDate=2020-09-26&checkOutDate=2020-09-27&rooms=%5B%7B%22adultNum%22%3A1%2C%22childNum%22%3A0%7D%5D&confirmationNo=&specialCode=&specialCodeType=&country=&specialCodeToken=");
+  $('.hotelWebsite2').attr("href","https://hotels.cloudbeds.com/reservation/CCGWUs#checkin=2020-09-25&checkout=2020-09-26");
 });
 
 // Modal: Toronto
@@ -231,6 +281,18 @@ $(".feature-toronto").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1477173860144-6f21cf27086a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1541781286675-7b70223358d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1550958940-1b59399ca81b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1571275293295-7a6d0d4dadd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1522010848282-9923b63eebaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1370&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1551530417-b5695ae086e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80");
+  $('.hotelName0').text("Sheraton Centre");
+  $('.hotelName1').text("Hyatt Regency Toronto");
+  $('.hotelName2').text("InterContinental Toronto");
+  $('.hotelAddress0').text("123 Queen St W, Toronto");
+  $('.hotelAddress1').text("370 King St W, Toronto");
+  $('.hotelAddress2').text("225 Front St W, Toronto");
+  $('.hotelWebsite0').attr("href","https://www.marriott.com/reservation/rateListMenu.mi?defaultTab=standard");
+  $('.hotelWebsite1').attr("href","https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-toronto/torrt?src=corp_lclb_gmb_seo_nam_torrt");
+  $('.hotelWebsite2').attr("href","https://www.ihg.com/intercontinental/hotels/us/en/toronto/yyztc/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-CA-_-YYZTC");
 });
 
 // Modal: Cape Town
@@ -247,6 +309,18 @@ $(".feature-cape").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1530187589563-1ff5b061d4f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1469&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1522406207105-f182bbb0b380?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1560173931-92117e84b893?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1549&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1570057633591-255115b592fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1436&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1494&q=80");
+  $('.hotelName0').text("Atlanticview Boutique Hotel");
+  $('.hotelName1').text("Radisson Blu Hotel Waterfront");
+  $('.hotelName2').text("The Bay Hotel");
+  $('.hotelAddress0').text("31 Francolin Rd, Camps Bay");
+  $('.hotelAddress1').text("100 Beach Road, Granger Bay");
+  $('.hotelAddress2').text("69 Victoria Rd, Camps Bay");
+  $('.hotelWebsite0').attr("href","https://bookings.frontdeskanywhere.net/bookings/#/account/F140409G");
+  $('.hotelWebsite1').attr("href","https://www.radissonhotels.com/en-us/booking/room-display?hotelCode=CPTZA&checkInDate=2020-09-25&checkOutDate=2020-09-26&adults%5B%5D=1&children%5B%5D=0&searchType=lowest&promotionCode=");
+  $('.hotelWebsite2').attr("href","https://app.secure-reservations.com/vnlthebayhotel/properties/bayhoteldirect?_ga=2.162432060.1868858890.1601043390-791293503.1601043390&check_in_date=25-09-2020&check_out_date=26-09-2020&number_adults=2");
 });
 
 // Modal: Zurich
@@ -263,6 +337,18 @@ $(".feature-zurich").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1544030134-c0883e9e4046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1557934447-52c74b70fee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1567156628531-95047dde50d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1510&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1489171078254-c3365d6e359f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1567368882212-7ed94545636f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80");
+  $('.hotelName0').text("Central Plaza");
+  $('.hotelName1').text("Hotel du Théâtre");
+  $('.hotelName2').text("The Dolder Grand");
+  $('.hotelAddress0').text("Central 1, 8001 Zürich");
+  $('.hotelAddress1').text("Seilergraben 69, 8001 Zürich");
+  $('.hotelAddress2').text("Kurhausstrasse 65, 8032 Zürich");
+  $('.hotelWebsite0').attr("href","https://gc.synxis.com/rez.aspx?Hotel=71148&Start=availresults&arrive=2017%2F12%2F14&depart=2017%2F12%2F15&promo=&locale=de-DE&_ga=2.213332372.1852704977.1601043763-939721344.1601043763");
+  $('.hotelWebsite1').attr("href","https://gc.synxis.com/rez.aspx?chain=6357&template=FASSBIND&locale=en-US&hotel=67163&start=availresults&shell=FASSBIND&adult=2&nights=2&arrive=09/26/2020");
+  $('.hotelWebsite2').attr("href","https://www.thedoldergrand.com/");
 });
 
 // Modal: Marrakech
@@ -279,6 +365,18 @@ $(".feature-marrakech").click(function(){
   $('#modal-image1').attr("src","https://images.unsplash.com/photo-1580816256869-3e870e8b948f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
   $('#modal-image2').attr("src","https://images.unsplash.com/photo-1572282924904-41bacfbd86a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80");
   $('#modal-image3').attr("src","https://images.unsplash.com/photo-1535191059345-c16453b851b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1578338131652-dcca32ab1d36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1541480551145-2370a440d585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80");
+  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  $('.hotelName0').text("Almaha Marrakech");
+  $('.hotelName1').text("Sofitel Marrakech Lounge");
+  $('.hotelName2').text("Hotel La Maison Arabe");
+  $('.hotelAddress0').text("55 Derb Ben Zina، Marrakesh");
+  $('.hotelAddress1').text("Quartier De, Rue Haroun Errachid");
+  $('.hotelAddress2').text("Derb Assehbi, Marrakesh");
+  $('.hotelWebsite0').attr("href","https://direct-book.com/properties/AlmahaMarrakechSPADirect?checkInDate=2020-09-25&checkOutDate=2020-09-26&utm_source=GoogleHotelAds&locale=fr&currency=MAD&items[0][adults]=2&items[0][children]=0&items[0][infants]=0");
+  $('.hotelWebsite1').attr("href","https://all.accor.com/ssr/app/accor/rates/3569/index.en.shtml?dateIn=2020-09-30&nights=8&compositions=1&stayplus=false");
+  $('.hotelWebsite2').attr("href","https://app.thebookingbutton.com/properties/lamaisonarabedirect?locale=fr&check_in_date=25-09-2020&check_out_date=26-09-2020&number_adults=2");
 });
 
 /* Image Slider for Landing Page */
