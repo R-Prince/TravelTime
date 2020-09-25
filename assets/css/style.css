@@ -135,12 +135,49 @@
     color: white;
 }
 
-/* Navbar */
+/*Section: Navbar*/
 
-.nav-link{
-    color: white;
+.sidenav {
+  height: 75vh;
+  width: 0;
+  position: fixed; 
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(61, 61, 61, 0.9);
+  overflow-x: hidden;
+  padding-top: 60px; 
+  transition: 0.5s;
 }
 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 122%;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  font-family: "Exo", sans-serif;
+  text-transform: uppercase;
+}
+
+.sidenav a:hover {
+  color: #A6ABAB;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #A6ABAB;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
 .fa-bars{
     color: white;
     font-size: 1.5rem;
@@ -371,5 +408,4 @@ footer{
 .footer-icon{
     color: white;
 }
-
 
