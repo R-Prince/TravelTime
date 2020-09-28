@@ -14,6 +14,7 @@ function placeSearch(){
     var place = autocomplete.getPlace();
     var lat = place.geometry.location.lat();
     var lng = place.geometry.location.lng();
+    var placeId = place.place_id;
 
     $('#modal-page').modal('show');
     $('#modal-auto-header').text(place.name);
@@ -22,10 +23,8 @@ function placeSearch(){
     autoMap(lat,lng);
 };
 
-// Google Maps API - Opens a map on the modal based on the city selected
+// Google Maps API - Opens a map on the modal based on the city selected and returns tourist attractions
 function autoMap(lat,lng) {
-    var lat = lat;
-    var lng = lng;
     var city = new google.maps.LatLng(lat,lng);
 
     map = new google.maps.Map(document.getElementById('mapAuto'), {
@@ -33,28 +32,13 @@ function autoMap(lat,lng) {
         zoom: 15
     });
 
-    var resturants = {
-        location: city,
-        radius: '500',
-        query: ['restaurant']
-    };
-
-    var hotels = {
-        location: city,
-        radius: '500',
-        query: ['lodging']
-    };
-
-    var attractions = {
-        location: city,
-        radius: '500',
-        query: ['tourist_attraction']
-    };
+    var hotels = {location: city,radius: '500',query: ['lodging']};
+    var attractions = {location: city,radius: '500',query: ['tourist_attraction']};
     
     service = new google.maps.places.PlacesService(map);
-    service.textSearch(resturants, callback);
-    service.textSearch(attractions, callback);
-    service.textSearch(hotels, hotelResults);
+    service.nearbySearch(attractions, callback);
+    service.nearbySearch(hotels, hotelResults);
+    service.nearbySearch(attractions, attrResults);
 };
 
 // Google Maps API - Callback function that drops markers on the map which are restuarants and attractions in the city
@@ -62,6 +46,15 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
+
+            const image = {
+                url: place.icon,
+                size: new google.maps.Size(65, 65),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25),
+            };
+
             marker = new google.maps.Marker({
                 map: map,
                 animation: google.maps.Animation.DROP,
@@ -69,7 +62,7 @@ function callback(results, status) {
                 name: place.name,
                 address: place.formatted_address,
                 rating: place.rating,
-                icon: place.icon
+                icon: image
             });
 
             var infowindow = new google.maps.InfoWindow({
@@ -90,10 +83,25 @@ function callback(results, status) {
     }    
 }
 
+// Google Place API - Using place ids this function returns information on the attractions used for the cards
+function attrResults(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 1; i < 4; i++) {
+            var placeIds = results[i].place_id;
+            var request = {
+                placeId: placeIds,
+                fields: ['name', 'rating', 'website', 'photo', 'vicinity']
+            }
+            service = new google.maps.places.PlacesService(map);
+            service.getDetails(request, attrCards);   
+        };
+    };    
+};
+
 // Google Place API - Using place ids this function returns information on the hotels used for the cards
 function hotelResults(results, status){
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < 6; i++) {
+        for (var i = 1; i < 7; i++) {
             var placeIds = results[i].place_id;
             var request = {
                 placeId: placeIds,
@@ -139,9 +147,44 @@ function hotelCards(results, status){
     }
 }
 
+// Google Place API - This function uses the information returned from the search and creates html attraction cards
+function attrCards(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        var place = results;
+        if (place.rating) {
+            var ratingHtml = '';
+            for (var i = 0; i < 5; i++) {
+                if (place.rating < (i + 0.5)) {
+                    ratingHtml += '<i class="far fa-star"></i>';
+                } else {
+                    ratingHtml += '<i class="fas fa-star"></i>';
+                }
+            }
+        }
+        $("#attractionCards").append(
+        `<div class="col-12 col-lg-4 mb-3">
+            <div class="card">
+                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
+                <div class="card-body text-center">
+                    <ul class="card-list">
+                        <li class="card-item font-weight-bolder">${place.name}</li>
+                        <li  class="card-item">${place.vicinity}</li>  
+                    </ul>
+                    <hr class="card-hr">
+                    <ul class="card-list">
+                        <li class="card-item">${ratingHtml}</li>
+                    </ul>
+                        <a href=${place.website} target="_blank" class="btn btn-orange">Visit Website</a>
+                </div>
+            </div>
+        </div>`);
+    }
+}
+
 // Remove previous HTML hotel cards, ready for the next search. 
 function removeCards(){
     $("#hotelCards").empty();
+    $("#attractionCards").empty();
     $('#quick-guide').empty();
     $('#topPicks').empty();
     document.getElementById('autocomplete').value = '';
