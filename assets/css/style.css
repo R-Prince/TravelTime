@@ -70,6 +70,8 @@
 
 .success-modal-title{
     color: #F2AB9B;
+    font-family: "Exo", sans-serif;
+    text-transform: uppercase;
 }
 
 /* Buttons */
@@ -201,11 +203,6 @@ input::placeholder {
   font-family: "Open Sans", sans-serif;
 }
 
-#mapAuto{
-    height: 80vh;
-
-}
-
 #rating {
     font-size: 13px;
     font-family: "Open Sans", sans-serif;
@@ -325,6 +322,10 @@ input::placeholder {
     font-size: 1rem;
 }
 
+#mapAuto{
+    height: 80vh;
+}
+
 .modal-guide{
     font-family: "Exo", sans-serif;
     text-transform: uppercase;
@@ -357,8 +358,8 @@ input::placeholder {
     font-family: "Open Sans", sans-serif;
 }
 
-#mapModal{
-    height: 80vh;
+.hotel-image{
+    height: 15rem;
 }
 
 .card-hr{
@@ -391,6 +392,11 @@ input::placeholder {
 /* Section: Contact Us */
 .contact-container{
     background-color: #3D3D3D;
+}
+
+/* Section: Success message (modal) */
+.success-text{
+    font-family: "Open Sans",sans-serif;
 }
 
 /* Section: Footer*/

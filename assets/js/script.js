@@ -122,7 +122,7 @@ function hotelCards(results, status){
         $("#hotelCards").append(
         `<div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="img-fluid card-img-top" alt="Image of the hotel">
+                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
                 <div class="card-body text-center">
                     <ul class="card-list">
                         <li class="card-item font-weight-bolder">${place.name}</li>
@@ -191,7 +191,7 @@ $('.top-picks').click(function(){
         $('#topPicks').append(
             `<div class="col-12 col-lg-4 mb-3">
                 <div class="card">
-                    <img src="..." class="img-fluid card-img-top${i}" alt="Image of the hotel">
+                    <img src="..." class="hotel-image img-fluid card-img-top${i}" alt="Image of the hotel">
                     <div class="card-body text-center">
                         <ul class="card-list">
                             <li class="card-item hotelName${i} font-weight-bolder"></li>
