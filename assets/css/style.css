@@ -33,13 +33,13 @@
 
 .callout-header{
     font-family: "Exo", sans-serif;
-    font-size: 3.5rem;
+    font-size: 7vw;
     color: white;
 }
 
 .callout-header-mobile{
     font-family: "Exo", sans-serif;
-    font-size: 2.5rem;
+    font-size: 13vw;
     color: white;
 }
 
@@ -96,7 +96,8 @@
     border: 2px solid #F2AB9B;
     color: white;
     font-family: "Exo", sans-serif;
-    background-color: #F2AB9B
+    background-color: #F2AB9B;
+    font-size: 3vw;
 }
 
 .btn-grey{
@@ -106,13 +107,54 @@
     background-color: #A6ABAB;
 }
 
+/* Section: Callout Image Responsive Breakpoints */
+
+@media (min-width: 300px) {
+    .callout-container{
+    height: 75vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=576&q=80');
+    background-size: cover;
+    }
+}
+
+@media (min-width: 576px) {
+    .callout-container{
+    height: 75vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80');
+    background-size: cover;
+    }
+}
+
+@media (min-width: 768px) {
+    .callout-container{
+    height: 75vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80');
+    background-size: cover;
+    }
+}
+
+@media (min-width: 992px) {
+    .callout-container{
+    height: 75vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .callout-container{
+    height: 75vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2500&q=80');
+    background-size: cover;
+    }
+}
 
 /* Section: Callout */
-
-.callout-container{
-    background: url('https://images.unsplash.com/photo-1486067068780-e5b81db649e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1508&q=80') no-repeat fixed center;
-    height: 75vh;
-}
 
 .callout-section{
     position: relative;
@@ -127,13 +169,13 @@
 
 .callout-text{
     font-family: "Open Sans",sans-serif;
-    font-size: 1.2rem;
+    font-size: 3vmin;
     color: white;
 }
 
 .callout-text-mobile{
     font-family: "Open Sans",sans-serif;
-    font-size: 1.2rem;
+    font-size: 4.5vw;
     color: white;
 }
 
@@ -182,7 +224,7 @@
 }
 .fa-bars{
     color: white;
-    font-size: 1.5rem;
+    font-size: 4vh;
 }
 
 /* Section: Search */

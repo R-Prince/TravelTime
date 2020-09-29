@@ -402,25 +402,6 @@ $(".feature-marrakech").click(function(){
   $('.hotelWebsite2').attr("href","https://app.thebookingbutton.com/properties/lamaisonarabedirect?locale=fr&check_in_date=25-09-2020&check_out_date=26-09-2020&number_adults=2");
 });
 
-/* Image Slider for Landing Page */
-$(function () {
-    var image = $('.callout-container');
-
-    var backgrounds = [
-      'url(https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center', 
-      'url(https://images.unsplash.com/photo-1486067068780-e5b81db649e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1508&q=80) no-repeat center'];
-    var current = 0;
-
-    function nextBackground() {
-        image.css('background',
-        backgrounds[current = ++current % backgrounds.length]);
-
-        setTimeout(nextBackground, 6000);
-    }
-    setTimeout(nextBackground, 6000);
-    image.css('background', backgrounds[0]);
-});
-
 // Open side nav bar.
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
