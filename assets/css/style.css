@@ -33,7 +33,7 @@
 
 .callout-header{
     font-family: "Exo", sans-serif;
-    font-size: 7vw;
+    font-size: 6vw;
     color: white;
 }
 
@@ -74,6 +74,26 @@
     text-transform: uppercase;
 }
 
+.attraction-grey-header{
+    font-family: "Exo", sans-serif;
+    font-size: 2.5rem;
+    margin: 3rem;
+    color: #3D3D3D;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+@media (min-width: 300px) and (max-width: 375px) {
+    .attraction-grey-header{
+    font-family: "Exo", sans-serif;
+    font-size: revert;
+    margin: 3rem;
+    color: #3D3D3D;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    }
+}
+
 /* Buttons */
 
 .btn-black{
@@ -97,7 +117,10 @@
     color: white;
     font-family: "Exo", sans-serif;
     background-color: #F2AB9B;
-    font-size: 3vw;
+}
+
+.btn-landing{
+    font-size: 1.2vw;
 }
 
 .btn-grey{
@@ -169,7 +192,7 @@
 
 .callout-text{
     font-family: "Open Sans",sans-serif;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     color: white;
 }
 
