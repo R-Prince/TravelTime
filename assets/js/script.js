@@ -7,7 +7,7 @@ function startAuto(){
         types: ['(cities)']}
     );
     autocomplete.addListener('place_changed', placeSearch);
-};
+}
 
 // Google Maps API - Open modal and returns a city and map based on users search. 
 function placeSearch(){
@@ -20,12 +20,10 @@ function placeSearch(){
     $('#modal-auto-country').text(place.formatted_address);
     
     autoMap(lat,lng);
-};
+}
 
 // Google Maps API - Opens a map on the modal based on the city selected and returns tourist attractions
 function autoMap(lat,lng) {
-    var lat = lat;
-    var lng = lng;
     var city = new google.maps.LatLng(lat,lng);
     map = new google.maps.Map(document.getElementById('mapAuto'), {
         center: city,
@@ -40,14 +38,14 @@ function autoMap(lat,lng) {
     service.nearbySearch(interests, callback);
     service.nearbySearch(attractions, attrResults);
     service.nearbySearch(hotels, hotelResults);
-};
+}
 
 // Google Maps API - Callback function that drops markers on the map which are restuarants and attractions in the city
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
-            const image = {
+            var image = {
                 url: place.icon,
                 size: new google.maps.Size(65, 65),
                 origin: new google.maps.Point(0, 0),
@@ -55,7 +53,7 @@ function callback(results, status) {
                 scaledSize: new google.maps.Size(25, 25),
             };
 
-            marker = new google.maps.Marker({
+            var marker = new google.maps.Marker({
                 map: map,
                 animation: google.maps.Animation.DROP,
                 position: place.geometry.location,
@@ -91,12 +89,12 @@ function attrResults(results, status){
             var request = {
                 placeId: placeIds,
                 fields: ['name', 'rating', 'website', 'photo', 'vicinity']
-            }
+            };
             var service = new google.maps.places.PlacesService(map);
             service.getDetails(request, attrCards);  
-        };
-    };    
-};
+        }
+    } 
+}
 
 // Google Place API - Using place ids this function returns information on the hotels used for the cards
 function hotelResults(results, status){
@@ -106,12 +104,12 @@ function hotelResults(results, status){
             var request = {
                 placeId: placeIds,
                 fields: ['name', 'rating', 'website', 'photo', 'vicinity']
-            }
+            };
             var service = new google.maps.places.PlacesService(map);
             service.getDetails(request, hotelCards);  
-        };
-    };    
-};
+        }
+    }    
+}
 
 // Google Place API - This function uses the information returned from the search and creates html hotel cards
 function hotelCards(results, status){
@@ -127,7 +125,7 @@ function hotelCards(results, status){
             }
         } else{
             var ratingHtml = "Not Available";
-        };
+        }
 
         $("#hotelCards").append(
         `<div class="col-12 col-lg-4 mb-3">
@@ -163,7 +161,7 @@ function attrCards(results, status){
             }
         } else{
             var ratingHtml = "Not Available";
-        };
+        }
         
         $("#attractionCards").append(
         `<div class="col-12 col-lg-4 mb-3">
@@ -242,7 +240,7 @@ $('.top-picks').click(function(){
                 </div>
             </div>`
         );
-    };
+    }
 });
 
 

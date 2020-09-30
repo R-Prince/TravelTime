@@ -105,36 +105,17 @@ Hotel Section;
 1. Ensure hotel cards are displayed correctly with the correct information. 
 2. Change display from desktop to mobile and ensure content is being displayed correctly.
 
-Close buttons;
-1. Ensure when the “close” icon and “close” button is clicked the modal collapses.
-2. Change display from desktop to mobile and ensure content is being displayed correctly and the buttons again close the modal. 
-
-### Modal page: Recommendation results
-Header;
-1. Ensure the correct city appears as the header based on the user search.
-2. Ensure the correct country appears as the sub-header based on the user search. 
-3.  Change display from desktop to mobile and ensure content is being displayed correctly.
-
-Image carousel;
-1. Ensure the correct images are being displayed in relation to the city selected.
-2. Ensure the carousel is working correctly and the images are changing every 3 seconds in a loop. 
-3. Change display from desktop to mobile and ensure content is being displayed correctly.
-
-Quick Guide Section;
-1. Ensure the correct information appears in relation to the city selected.
-2. Change display from desktop to mobile and ensure content is being displayed correctly. 
-
-Google Map;
-1. Change display from desktop to mobile and ensure content is being displayed correctly.
-2. Click on markers to ensure an information window pops up. 
-
-Hotel Section;
-1. Ensure hotel cards are displayed correctly with the correct information. 
+Tourist Attraction Section;
+1. Ensure attraction cards are displayed correctly with the correct information. 
 2. Change display from desktop to mobile and ensure content is being displayed correctly.
 
 Close buttons;
 1. Ensure when the “close” icon and “close” button is clicked the modal collapses.
 2. Change display from desktop to mobile and ensure content is being displayed correctly and the buttons again close the modal. 
+
+Quick Guide Section;
+1. Ensure the correct information appears in relation to the city selected.
+2. Change display from desktop to mobile and ensure content is being displayed correctly. 
 
 ## Javascript manual logical testing
 
