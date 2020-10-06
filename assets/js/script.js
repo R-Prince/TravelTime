@@ -27,7 +27,7 @@ function autoMap(lat,lng) {
     var city = new google.maps.LatLng(lat,lng);
     map = new google.maps.Map(document.getElementById('mapAuto'), {
         center: city,
-        zoom: 15
+        zoom: 16
     });
 
     var hotels = {location: city,radius: '500',type: ['lodging']};
@@ -45,8 +45,32 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
+            var type = place.types[0];
+
+            // Custom icons for markers on the map
+            switch (type){
+                case "lodging":
+                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/608/608912.svg";
+                break;
+
+                case "restaurant":
+                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2452/2452100.svg"; 
+                break;
+
+                case "shopping_mall":
+                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/743/743007.svg";
+                break;
+
+                case "point_of_interest":
+                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3542/3542642.svg";
+                break;
+
+                default:
+                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3567/3567097.svg";
+            }
+
             var image = {
-                url: place.icon,
+                url: urlIcon,
                 size: new google.maps.Size(65, 65),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(17, 34),
