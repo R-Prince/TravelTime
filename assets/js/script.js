@@ -40,6 +40,30 @@ function autoMap(lat,lng) {
     service.nearbySearch(hotels, hotelResults);
 }
 
+// Assign custom icon to markers on the map
+function icon(type){
+    switch (type){
+        case "lodging":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/608/608912.svg";
+        break;
+
+        case "restaurant":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2452/2452100.svg"; 
+        break;
+
+        case "shopping_mall":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/743/743007.svg";
+        break;
+
+        case "point_of_interest":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3542/3542642.svg";
+        break;
+
+        default:
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3567/3567097.svg";
+    }
+}
+
 // Google Maps API - Callback function that drops markers on the map which are restuarants and attractions in the city
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -48,26 +72,7 @@ function callback(results, status) {
             var type = place.types[0];
 
             // Custom icons for markers on the map
-            switch (type){
-                case "lodging":
-                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/608/608912.svg";
-                break;
-
-                case "restaurant":
-                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2452/2452100.svg"; 
-                break;
-
-                case "shopping_mall":
-                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/743/743007.svg";
-                break;
-
-                case "point_of_interest":
-                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3542/3542642.svg";
-                break;
-
-                default:
-                urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3567/3567097.svg";
-            }
+            icon(type);
 
             var image = {
                 url: urlIcon,
