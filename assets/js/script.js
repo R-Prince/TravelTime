@@ -144,6 +144,7 @@ function hotelResults(results, status){
 function hotelCards(results, status){
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var place = results;
+        // Check if rating is available
         if(place.rating) {var ratingHtml = '';
             for (var i = 0; i < 5; i++) {
                 if (place.rating < (i + 0.5)) {
@@ -155,11 +156,18 @@ function hotelCards(results, status){
         } else{
             var ratingHtml = "Not Available";
         }
-
+        
+        // Check if a google photo is available if not return generic image
+        if(("photos" in place) == true){
+            var image = place.photos[0].getUrl({maxWidth: 300, maxHeight: 300});
+        } else{
+            var image = "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80";
+        }
+        
         $("#hotelCards").append(
         `<div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
+                <img src=${image} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
                 <div class="card-body text-center">
                     <ul class="card-list">
                         <li class="card-item font-weight-bolder">${place.name}</li>
@@ -191,11 +199,18 @@ function attrCards(results, status){
         } else{
             var ratingHtml = "Not Available";
         }
+
+        // Check if a google photo is available if not return generic image
+        if(("photos" in place) == true){
+            var image = place.photos[0].getUrl({maxWidth: 300, maxHeight: 300});
+        } else{
+            var image = "https://images.unsplash.com/photo-1416397202228-6b2eb5b3bb26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80";
+        }
         
         $("#attractionCards").append(
         `<div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <img src=${place.photos[0].getUrl({maxWidth: 300, maxHeight: 300})} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
+                <img src=${image} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
                 <div class="card-body text-center">
                     <ul class="card-list">
                         <li class="card-item font-weight-bolder">${place.name}</li>
