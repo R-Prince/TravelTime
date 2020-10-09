@@ -121,6 +121,8 @@ HTML, CSS and Javascript languages were used to programme the website.
 
 [Font Awesome](https://fontawesome.com/) - The project uses font awesome to style the icons throughout the website. 
 
+[Flat Icon](https://www.flaticon.com/) - The project uses flat icon to style the markers used on the google map.
+
 [Google Fonts](https://fonts.google.com/) - The project uses google fonts to style the font used throughout the website. 
 
 [Hover.css](https://ianlunn.github.io/Hover/) - This project uses hover.css to add hover features throughout the website. 

@@ -44,11 +44,11 @@ function autoMap(lat,lng) {
 function icon(type){
     switch (type){
         case "lodging":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/608/608912.svg";
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/897/897061.svg";
         break;
 
         case "restaurant":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2224/2224542.svg"; 
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3556/3556680.svg"; 
         break;
 
         case "bar":
@@ -64,15 +64,15 @@ function icon(type){
         break;
 
         case "shopping_mall":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/743/743007.svg";
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/831/831209.svg";
         break;
 
         case "point_of_interest":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3065/3065268.svg";
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/883/883746.svg";
         break;
 
         default:
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3567/3567097.svg";
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/944/944551.svg";
     }
 }
 
