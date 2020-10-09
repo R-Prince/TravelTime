@@ -36,8 +36,8 @@ function autoMap(lat,lng) {
  
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(interests, callback);
-    //service.nearbySearch(attractions, attrResults);
-    //service.nearbySearch(hotels, hotelResults);
+    service.nearbySearch(attractions, attrResults);
+    service.nearbySearch(hotels, hotelResults);
 }
 
 // Assign custom icon to markers on the map
