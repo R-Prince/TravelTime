@@ -36,8 +36,8 @@ function autoMap(lat,lng) {
  
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(interests, callback);
-    service.nearbySearch(attractions, attrResults);
-    service.nearbySearch(hotels, hotelResults);
+    //service.nearbySearch(attractions, attrResults);
+    //service.nearbySearch(hotels, hotelResults);
 }
 
 // Assign custom icon to markers on the map
@@ -48,7 +48,19 @@ function icon(type){
         break;
 
         case "restaurant":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2452/2452100.svg"; 
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2224/2224542.svg"; 
+        break;
+
+        case "bar":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/761/761767.svg"; 
+        break;
+
+        case "spa":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2751/2751542.svg"; 
+        break;
+
+        case "night_club":
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3093/3093998.svg"; 
         break;
 
         case "shopping_mall":
@@ -56,7 +68,7 @@ function icon(type){
         break;
 
         case "point_of_interest":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3542/3542642.svg";
+        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3065/3065268.svg";
         break;
 
         default:
@@ -70,6 +82,7 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             var type = place.types[0];
+            console.log(type);
 
             // Custom icons for markers on the map
             icon(type);
