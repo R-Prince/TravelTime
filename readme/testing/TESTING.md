@@ -13,6 +13,17 @@
 
 [JSHint](https://jshint.com/) was used to test the javascript code and ensure no errors or typos were returned . When the JS code was run through the website a total of [51 warnings](/readme/testing/testingScreenshots/jsHintTesting.png) was returned which mostly consisted of missing semi-colons and undefined variables. 
 
+## Jasmine
+
+[Jasmine Testing](https://jasmine.github.io/index.html) was used to test javascript functions throughout the website.
+The jasmine testing can be found [here](/readme/testing/jasmineTesting/spec/calcSpec.js).
+
+Please see below to run the jasmine tests:
+
+1. Open the [jasmineTesting.html](/readme/testing/jasmineTesting/jasmineTesting.html).
+2. Run the html file and view it in your browser to see the test results.
+
+
 ## Testing client stories from UX section of README
 
 1. As a new visitor to the website, I want to easily be able to search for my next holiday destination. 
