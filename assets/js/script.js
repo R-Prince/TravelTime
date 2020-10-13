@@ -42,38 +42,37 @@ function autoMap(lat,lng) {
 }
 
 // Assign custom icon to markers on the map
-function icon(type){
+function getIcon(type){
     switch (type){
         case "lodging":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/897/897061.svg";
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/897/897061.svg";
+        
 
         case "restaurant":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3556/3556680.svg"; 
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3556/3556680.svg"; 
+        
 
         case "bar":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/761/761767.svg"; 
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/761/761767.svg"; 
+        
 
         case "spa":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2751/2751542.svg"; 
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2751/2751542.svg"; 
+        
 
         case "night_club":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3093/3093998.svg"; 
-        return;
-
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3093/3093998.svg"; 
+        
         case "shopping_mall":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/831/831209.svg";
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/831/831209.svg";
+        
 
         case "point_of_interest":
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/883/883746.svg";
-        return;
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/883/883746.svg";
+        
 
         default:
-        urlIcon = "https://www.flaticon.com/svg/static/icons/svg/944/944551.svg";
+        return urlIcon = "https://www.flaticon.com/svg/static/icons/svg/944/944551.svg";
     }
 }
 
@@ -83,9 +82,9 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             var type = place.types[0];
-
+            
             // Custom icons for markers on the map
-            icon(type);
+            getIcon(type);
 
             var image = {
                 url: urlIcon,
@@ -322,7 +321,7 @@ $(document).ready(function(){
 })
 
 // Modal: Venice
-$(".venice-feature").click(function(){  
+$(".feature-venice").click(function(){ 
     autoMap(45.4408474, 12.3155151);
     $('#modal-auto-header').text("venice");
     $('#modal-auto-country').text("italy");
@@ -344,13 +343,14 @@ $(".venice-feature").click(function(){
     $('.hotelWebsite0').attr("href","https://www.capagan.com/?utm_source=google&utm_medium=organic&utm_campaign=GoogleMyBusiness");
     $('.hotelWebsite1').attr("href","https://www.blastnessbooking.com/reservations/risultato.html?lingua_int=eng&id_albergo=16429&id_stile=14017&id_gruppo=18451&dc_gruppo=2543&dc=6131&gg=25&mm=9&aa=2020&a_date=25%2F09%2F2020&notti_1=1&tot_camere=1&tot_adulti=2&tot_bambini=0&generic_codice=&_gfc_cli=16010414769248914&_ga=2.267384142.1792683260.1601041491-662343565.1601041491");
     $('.hotelWebsite2').attr("href","https://www.h10hotels.com/en/venice-hotels/h10-palazzo-canova/rooms");
+    $('#modal-page').modal('show');
 });
 
 // Modal: Sydney
 $(".feature-sydney").click(function(){
   $('#modal-page').modal('show');
   autoMap(-33.8688197, 151.2092955);
-  $('#modal-auto-header').text("sydney");
+  $('#modal-auto-header').innerHTML("sydney");
   $('#modal-auto-country').text("Australia");
   $('#language-item').text("English");
   $('#currency-item').text("Australian Dollar");
@@ -487,5 +487,3 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
-
-
