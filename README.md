@@ -140,7 +140,7 @@ Testing information can be found in separate [TESTING.md file](readme/testing/TE
 
 # Deployment
 
-This project was developed using Gitpod then committed and pushed to Github.
+This project was developed using Gitpod then committed and pushed to Github before being deployed to GitHub pages.
 
 The project is open source and was deployed using the following steps:
 1. Once on the GitHub repository [Travel Time](https://github.com/R-Prince/TravelTime) repository. 

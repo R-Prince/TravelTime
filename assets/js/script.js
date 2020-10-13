@@ -1,4 +1,5 @@
 document.getElementById("autocomplete").addEventListener("click", startAuto);
+var autocomplete;
 
 // Google autocomplete api for search bar
 function startAuto(){
@@ -45,44 +46,43 @@ function icon(type){
     switch (type){
         case "lodging":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/897/897061.svg";
-        break;
+        return;
 
         case "restaurant":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3556/3556680.svg"; 
-        break;
+        return;
 
         case "bar":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/761/761767.svg"; 
-        break;
+        return;
 
         case "spa":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/2751/2751542.svg"; 
-        break;
+        return;
 
         case "night_club":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/3093/3093998.svg"; 
-        break;
+        return;
 
         case "shopping_mall":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/831/831209.svg";
-        break;
+        return;
 
         case "point_of_interest":
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/883/883746.svg";
-        break;
+        return;
 
         default:
         urlIcon = "https://www.flaticon.com/svg/static/icons/svg/944/944551.svg";
     }
 }
 
-// Google Maps API - Callback function that drops markers on the map which are restuarants and attractions in the city
+// Google Maps API - Callback function that drops markers on the map which are tourist attractions in the city
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             var type = place.types[0];
-            console.log(type);
 
             // Custom icons for markers on the map
             icon(type);
@@ -109,12 +109,13 @@ function callback(results, status) {
                 maxWidth: 300
             });
 
+            // Open information window about marker on Google Map
             marker.addListener('click', function() {
             infowindow.setContent(
                 "<div><strong>" + 
-                this.name + "</strong><br>" + 
-                "<strong>Address: </strong>" + this.address + "<br>" + 
-                "<strong>Rating: </strong>" + this.rating +
+                    this.name + "</strong><br>" + 
+                    "<strong>Address: </strong>" + this.address + "<br>" + 
+                    "<strong>Rating: </strong>" + this.rating +
                 "</div>"
                 );
                 infowindow.open(map, this);
@@ -201,6 +202,7 @@ function hotelCards(results, status){
 function attrCards(results, status){
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var place = results;
+        console.log(place);
         if(place.rating) {var ratingHtml = '';
             for (var i = 0; i < 5; i++) {
                 if (place.rating < (i + 0.5)) {
@@ -223,7 +225,7 @@ function attrCards(results, status){
         $("#attractionCards").append(
         `<div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <img src=${image} class="hotel-image img-fluid card-img-top" alt="Image of the hotel">
+                <img src=${image} class="hotel-image img-fluid card-img-top" alt="Image of the attraction">
                 <div class="card-body text-center">
                     <ul class="card-list">
                         <li class="card-item font-weight-bolder">${place.name}</li>
@@ -320,29 +322,28 @@ $(document).ready(function(){
 })
 
 // Modal: Venice
-$(".venice-feature").click(function(){ 
-  $('#modal-page').modal('show');
-  autoMap(45.4408474, 12.3155151);
-  $('#modal-auto-header').text("venice");
-  $('#modal-auto-country').text("italy");
-  $('#language-item').text(" Italian");
-  $('#currency-item').text(" Euros");
-  $('#temp-item').text(" 22");
-  $('#airport-item').text(" Treviso Airport (TSF)");
-  $('#guide-item').text("The image of a dazzling city built on water has captured the imagination of writers, travellers, and city planners the world over. St Petersburg in Russia was modelled on it, Venezuela was named after it. Venice has a special place in the world’s collective heart and imagination.");
-  $('#modal-image').attr("src","https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
-  $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1572166292333-4dd297b6409d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
-  $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1594560913036-d15f23f8a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80");
-  $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1556455420-3305b8256448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
-  $('.hotelName0').text("Ca'Pagan");
-  $('.hotelName1').text("Palazzo Veneziano");
-  $('.hotelName2').text("H10 Palazzo Canova");
-  $('.hotelAddress0').text("Calle de le Carozze");
-  $('.hotelAddress1').text("Fondamenta Zattere Al Ponte");
-  $('.hotelAddress2').text("744 Riva del Vin, San Polo");
-  $('.hotelWebsite0').attr("href","https://www.capagan.com/?utm_source=google&utm_medium=organic&utm_campaign=GoogleMyBusiness");
-  $('.hotelWebsite1').attr("href","https://www.blastnessbooking.com/reservations/risultato.html?lingua_int=eng&id_albergo=16429&id_stile=14017&id_gruppo=18451&dc_gruppo=2543&dc=6131&gg=25&mm=9&aa=2020&a_date=25%2F09%2F2020&notti_1=1&tot_camere=1&tot_adulti=2&tot_bambini=0&generic_codice=&_gfc_cli=16010414769248914&_ga=2.267384142.1792683260.1601041491-662343565.1601041491");
-  $('.hotelWebsite2').attr("href","https://www.h10hotels.com/en/venice-hotels/h10-palazzo-canova/rooms");
+$(".venice-feature").click(function(){  
+    autoMap(45.4408474, 12.3155151);
+    $('#modal-auto-header').text("venice");
+    $('#modal-auto-country').text("italy");
+    $('#language-item').text(" Italian");
+    $('#currency-item').text(" Euros");
+    $('#temp-item').text(" 22");
+    $('#airport-item').text(" Treviso Airport (TSF)");
+    $('#guide-item').text("The image of a dazzling city built on water has captured the imagination of writers, travellers, and city planners the world over. St Petersburg in Russia was modelled on it, Venezuela was named after it. Venice has a special place in the world’s collective heart and imagination.");
+    $('#modal-image').attr("src","https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80");
+    $('.card-img-top0').attr("src","https://images.unsplash.com/photo-1572166292333-4dd297b6409d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    $('.card-img-top1').attr("src","https://images.unsplash.com/photo-1594560913036-d15f23f8a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80");
+    $('.card-img-top2').attr("src","https://images.unsplash.com/photo-1556455420-3305b8256448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    $('.hotelName0').text("Ca'Pagan");
+    $('.hotelName1').text("Palazzo Veneziano");
+    $('.hotelName2').text("H10 Palazzo Canova");
+    $('.hotelAddress0').text("Calle de le Carozze");
+    $('.hotelAddress1').text("Fondamenta Zattere Al Ponte");
+    $('.hotelAddress2').text("744 Riva del Vin, San Polo");
+    $('.hotelWebsite0').attr("href","https://www.capagan.com/?utm_source=google&utm_medium=organic&utm_campaign=GoogleMyBusiness");
+    $('.hotelWebsite1').attr("href","https://www.blastnessbooking.com/reservations/risultato.html?lingua_int=eng&id_albergo=16429&id_stile=14017&id_gruppo=18451&dc_gruppo=2543&dc=6131&gg=25&mm=9&aa=2020&a_date=25%2F09%2F2020&notti_1=1&tot_camere=1&tot_adulti=2&tot_bambini=0&generic_codice=&_gfc_cli=16010414769248914&_ga=2.267384142.1792683260.1601041491-662343565.1601041491");
+    $('.hotelWebsite2').attr("href","https://www.h10hotels.com/en/venice-hotels/h10-palazzo-canova/rooms");
 });
 
 // Modal: Sydney
