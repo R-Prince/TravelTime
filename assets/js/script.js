@@ -300,9 +300,27 @@ $('.top-picks').click(function(){
     }
 });
 
+// Create HTML for Travel Pick recommendations 
+
+var cityData = [["venice", "Venice","Italy"],["sydney", "Sydney", "Australia"], ["toronto", "Toronto", "Canada"], ["cape", "Cape Town", "South Africa"], ["zurich", "Zurich", "Switzerland"], ["marrakech","Marrakech","Morocco"]];
+
+$(document).ready(function(){
+    for (var i = 0; i < 6; i++) {
+        for (i = 0; i < cityData.length; i++) {
+            $('#travelPicks').append(
+                `<div class="top-picks guide-html feature-${cityData[i][0]} feature col-12 col-md-6 col-lg-4 text-center hvr-shrink">
+                    <div class=${cityData[i][0]} data-toggle="modal" data-target="#modal-page">
+                        <h3 class="recommendation-city">${cityData[i][1]}</h3>
+                        <span class="recommendation-country">${cityData[i][2]}</span>
+                    </div>
+                </div>`
+            )
+        }
+    }
+})
 
 // Modal: Venice
-$(".feature-venice").click(function(){ 
+$(".venice-feature").click(function(){ 
   $('#modal-page').modal('show');
   autoMap(45.4408474, 12.3155151);
   $('#modal-auto-header').text("venice");
@@ -468,3 +486,5 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+
+
