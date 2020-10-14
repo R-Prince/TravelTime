@@ -16,7 +16,7 @@
 ## Jasmine
 
 [Jasmine Testing](https://jasmine.github.io/index.html) was used to test javascript functions throughout the website.
-The jasmine testing can be found [here](/readme/testing/jasmineTesting/spec/calcSpec.js).
+The jasmine testing can be found [here](/readme/testing/jasmineTesting/spec/getIconSpec.js).
 
 Please see below to run the jasmine tests:
 
