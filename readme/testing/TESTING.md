@@ -26,26 +26,26 @@ Please see below to run the jasmine tests:
 
 ## Testing client stories from UX section of README
 
-1. As a new visitor to the website, I want to easily be able to search for my next holiday destination. 
+1. As a new visitor to the website, I want to easily be able to search for my next holiday destination [preview](/readme/testing/testingScreenshots/userStoryone.png). 
     1. Once the user lands on the page they are able to see the title “Search for your next destination”
     2. Scrolling down the page slightly the user can then type into the search bar and search for their next holiday destination. 
     3. Also by pressing the navigation bar they have a link to the search section of the page.
     4. Landing section > scroll down slightly > search for holiday destination.
-2. As a new visitor to the website, I want concise and easy to read information about the destination I have chosen such as tourist attraction and points of interests. 
+2. As a new visitor to the website, I want concise and easy to read information about the destination I have chosen such as tourist attraction and points of interests [preview](/readme/testing/testingScreenshots/userStorytwo.png). 
     1. On the landing page of the website there is a call to action button “Get Inspired” which jumps the user to the recommended destinations. The user can then select a city. A modal page pops up with information about the destination. 
     2. On the landing page of the website they can scroll down to the search bar and type in their desired city. Once selected a modal page pops up with information about the destination. 
     3. If the user clicks on a recommended city or searches the same city in the search bar the google map and place api returns the same information. 
-3. As a new visitor to the website, I want inspiration/ideas on the best holiday destinations to visit. 
+3. As a new visitor to the website, I want inspiration/ideas on the best holiday destinations to visit [preview](/readme/testing/testingScreenshots/userStorythree.png).
     1. The recommended section of the website recommends to the user 6 ideas from the best destinations around the world. 
     2. On the landing page of the website there is a call to action button “Get Inspired” which jumps the user to the recommended destinations. The user can then select a city. A modal page pops up with information about the destination. 
-4. As a client who knows where they want to go on holiday, I want to be able to view information on things I can do once I’m there. 
+4. As a client who knows where they want to go on holiday, I want to be able to view information on things I can do once I’m there [preview](/readme/testing/testingScreenshots/userStoryfour.png).
     1. On the landing page the user can scroll down to the search bar and type in the city they want to go on holiday. A modal page will then pop up with information on the city such as tourist attraction, restaurants and hotels.
-5. As a client who knows where they want to go on holiday, I want to be able to view information on hotels and book accommodation. 
+5. As a client who knows where they want to go on holiday, I want to be able to view information on hotels and book accommodation [preview](/readme/testing/testingScreenshots/userStoryfive.png).
     1. On the landing page the user can scroll down to the search bar and type in the city they want to go on holiday. A modal page will then pop up with information on the city and hotels in the area. A call to action button is present “Book now” which then leads the user to the hotel website to book accommodation.  
-6. As a returning visitor to the website, who has booked a hotel through the link, I want to be able to contact Time Travel if I have any issues. 
+6. As a returning visitor to the website, who has booked a hotel through the link, I want to be able to contact Time Travel if I have any issues [preview](/readme/testing/testingScreenshots/userStorysix.png). 
     1. On the landing page the user can scroll down to the contact us section of the page and fill out contact form which is then sent to Travel Time team. The user needs to provide contact details such as name, phone number and email address. 
     2. Also by pressing the navigation bar they have a link to the contact us section of the page.
-7. As a potential customer, I want to be able to contact Time Travel if I have any issues. 
+7. As a potential customer, I want to be able to contact Time Travel if I have any issues [preview](/readme/testing/testingScreenshots/userStorysix.png).
     1. On the landing page the user can scroll down to the contact us section of the page and fill out contact form which is then sent to Travel Time team. The user needs to provide contact details such as name, phone number and email address. 
     2. Also by pressing the navigation bar they have a link to the contact us section of the page.
 
