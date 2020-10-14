@@ -330,7 +330,7 @@ $(".feature-venice").click(function(){
 $(".feature-sydney").click(function(){
   $('#modal-page').modal('show');
   autoMap(-33.8688197, 151.2092955);
-  $('#modal-auto-header').innerHTML("sydney");
+  $('#modal-auto-header').text("sydney");
   $('#modal-auto-country').text("Australia");
   $('#language-item').text("English");
   $('#currency-item').text("Australian Dollar");
