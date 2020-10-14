@@ -1,3 +1,4 @@
+// Send customer inquiry to travel time team.
 function sendMail(contactForm){
     
     emailjs.send("gmail","rosieucd",{
