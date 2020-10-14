@@ -176,6 +176,13 @@ function hotelCards(results, status){
         } else{
             var image = "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80";
         }
+
+        // Check if a google website is available if not return generic image
+        if(("website" in place) == true){
+            var website = place.website;
+        } else{
+            var website = "https://r-prince.github.io/TravelTime/";
+        }
         
         $("#hotelCards").append(
         `<div class="col-12 col-lg-4 mb-3">
@@ -190,7 +197,7 @@ function hotelCards(results, status){
                     <ul class="card-list">
                         <li class="card-item">${ratingHtml}</li>
                     </ul>
-                        <a href=${place.website} target="_blank" class="btn btn-orange">Visit Website</a>
+                        <a href=${website} target="_blank" class="btn btn-orange">Visit Website</a>
                 </div>
             </div>
         </div>`);
@@ -201,7 +208,6 @@ function hotelCards(results, status){
 function attrCards(results, status){
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var place = results;
-        console.log(place)
         if(place.rating) {var ratingHtml = '';
             for (var i = 0; i < 5; i++) {
                 if (place.rating < (i + 0.5)) {
